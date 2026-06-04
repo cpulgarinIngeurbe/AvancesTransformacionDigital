@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COSMOS | Private Space Travel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&amp;family=Geist:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#63f7ff",
+                        "tertiary-container": "#00797e",
+                        "inverse-on-surface": "#2e3132",
+                        "primary-fixed-dim": "#b8c3ff",
+                        "on-surface": "#e1e3e4",
+                        "secondary-fixed": "#eddcff",
+                        "surface-container-high": "#282a2b",
+                        "surface-container-highest": "#323536",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-tertiary-fixed": "#002021",
+                        "surface-container-low": "#191c1d",
+                        "primary": "#b8c3ff",
+                        "on-background": "#e1e3e4",
+                        "secondary": "#d8b9ff",
+                        "on-primary-fixed-variant": "#0035be",
+                        "surface-tint": "#b8c3ff",
+                        "surface-variant": "#323536",
+                        "surface-bright": "#373a3b",
+                        "on-primary-fixed": "#001356",
+                        "on-secondary-fixed-variant": "#6200bc",
+                        "on-surface-variant": "#c4c5d9",
+                        "tertiary": "#00dce5",
+                        "surface-container-lowest": "#0c0f10",
+                        "outline-variant": "#434656",
+                        "surface-container": "#1d2021",
+                        "on-secondary-fixed": "#290055",
+                        "inverse-surface": "#e1e3e4",
+                        "on-primary-container": "#efefff",
+                        "background": "#111415",
+                        "on-tertiary": "#003739",
+                        "on-secondary-container": "#d5b5ff",
+                        "on-secondary": "#450086",
+                        "on-tertiary-container": "#bbfbff",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#6e06d0",
+                        "outline": "#8e90a2",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary": "#002388"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "container-padding": "40px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "body-lg": ["Geist"],
+                        "display-lg": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-panel-deep {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Shimmer Effect */
+        .glass-panel::after, .glass-panel-deep::after, button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.05) 45%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.05) 55%,
+                transparent 100%
+            );
+            transform: rotate(-45deg);
+            transition: all 0.6s;
+            pointer-events: none;
+            opacity: 0;
+        }
+        .glass-panel:hover::after, .glass-panel-deep:hover::after, button:hover::after {
+            opacity: 1;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translate(-30%, -30%) rotate(-45deg); }
+            100% { transform: translate(30%, 30%) rotate(-45deg); }
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Animation */
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 25px rgba(0, 220, 229, 0.5);
+            transform: scale(0.98);
+        }
+        .parallax-bg {
+            will-change: transform;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Particle Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-tertiary selection:text-on-tertiary overflow-x-hidden">
+<canvas id="particle-canvas"></canvas>
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full backdrop-blur-xl border border-white/20 bg-white/10 dark:bg-surface-container/10 flex justify-between items-center px-6 py-3 z-50 shadow-[0_0_30px_rgba(0,220,229,0.15)]" id="nav-shell">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="text-headline-md font-headline-md tracking-widest text-on-surface uppercase">COSMOS</span>
+</div>
+<button class="bg-tertiary text-on-tertiary px-5 py-2 rounded-full font-label-caps text-label-caps glow-hover transition-all duration-300 relative overflow-hidden">
+            RESERVE NOW
+        </button>
+</header>
+<main class="relative">
+<!-- Hero Section (1) -->
+<section class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden" id="hero">
+<div class="absolute inset-0 z-0 overflow-hidden" id="hero-parallax">
+<img alt="Majestic snow leopard astronaut" class="w-full h-full object-cover scale-110 parallax-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1GnsXj65rqZ2a1FHCeV74rcKSOTjbQvJxUJHCaUev8ct3mdHTsGVxph3ot_Vm07XGFiUAEzP0XGCmX9HYt1EvRKt5SCmpEQIK78Xx8CRuDZAHLsaxckag9zAyn2z7sQyN4YW3pcRQnKgaWkxAOB7FWaIMt5_wTTQgGXC2vCjeId1RMcm7tZRuiaKYXJ2IUf7MQKPlWokt2Dwo-b08SqJ4psl6wsStkToDX5n_0O6eb4oUefSpV9S4qa3BYkTV07fcxvwbpUMJaRQ"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+</div>
+<div class="relative z-10 text-center px-4 mt-20">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg tracking-tighter leading-tight drop-shadow-2xl reveal">
+                    THE GALAXY<br/><span class="text-tertiary">AWAITS</span>
+</h1>
+<p class="mt-6 font-body-md text-on-surface-variant max-w-xs mx-auto reveal" style="transition-delay: 200ms;">
+                    Experience the sublime silence of the void from the comfort of our pressurized viewing portals.
+                </p>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal animate-float" style="transition-delay: 500ms;">
+<span class="text-label-caps font-label-caps opacity-50">ORBITAL SCAN</span>
+<div class="w-px h-12 bg-gradient-to-b from-tertiary to-transparent"></div>
+</div>
+</section>
+<!-- Mission Section (2) -->
+<section class="py-24 px-6 relative reveal" id="mission">
+<div class="glass-panel rounded-3xl p-8 max-w-md mx-auto relative overflow-hidden group">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-tertiary/20 blur-3xl rounded-full group-hover:bg-tertiary/30 transition-colors duration-500"></div>
+<h2 class="font-label-caps text-label-caps text-tertiary mb-4">REDEFINING THE HORIZON</h2>
+<h3 class="font-headline-md text-headline-lg-mobile mb-6">Lumina Orbital</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                    Our mission is to democratize the celestial experience. We bridge the gap between imagination and the immense beauty of the cosmos, providing unparalleled safety and luxury at the edge of space.
+                </p>
+<div class="mt-10 grid grid-cols-2 gap-4">
+<div class="border-l border-tertiary/30 pl-4">
+<span class="block font-label-caps text-label-caps text-tertiary">ALTITUDE</span>
+<span class="font-label-caps text-body-lg">400 KM</span>
+</div>
+<div class="border-l border-tertiary/30 pl-4">
+<span class="block font-label-caps text-label-caps text-tertiary">VELOCITY</span>
+<span class="font-label-caps text-body-lg">7.6 KM/S</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Fleet Section (3) -->
+<section class="py-20 reveal" id="fleet">
+<div class="px-6 mb-8">
+<h2 class="font-headline-md text-headline-lg-mobile">THE FLEET</h2>
+<div class="w-12 h-1 bg-tertiary mt-2"></div>
+</div>
+<div class="flex overflow-x-auto gap-6 px-6 no-scrollbar pb-10">
+<div class="min-w-[280px] glass-panel rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-tertiary/10 transition-all duration-500">
+<div class="h-48 overflow-hidden">
+<img alt="Astra Vanguard Shuttle" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYRrwKaKpFVEIrxEIPBBC8OKcqusabAYhh-9gbcOR7oLmPZEc8jnD8h2yjCksNdK3PIzKAxMIrugeJVJUeTRW-t0FbNxs_Mvv6G1GaNaCjN2wKmTQm22_QIPCBE70Lz_fHHC5SF4kVjEPLRbJP2gEPUpZDvMo3ekpgJLPeU8BKLF_LylSBBOGhZGTxO8FlbwQtRr28kOcnZaSHE5HqFsnqOoQ02AFwW1GIeeHl9ssdoJwSP9F0DDUTRZDcyb9GwilokGsk-G26moQ"/>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-body-lg mb-2">Astra Vanguard</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Hypersonic sub-orbital shuttle for rapid global transit and low-earth excursions.</p>
+</div>
+</div>
+<div class="min-w-[280px] glass-panel rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-tertiary/10 transition-all duration-500">
+<div class="h-48 overflow-hidden">
+<img alt="Nebula Cruise Liner" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXrPpGUwshoZzXXeZb-_eTnhBtbqGGSJcZAo_rRPSoS1ewtAQVFswWWVPWBJh_XrT7RCBhsvW9EiVhLhkMIbUle1VFnBWUk4IupfAHfzl3mp8QDVOzIQPAMKxksqVlM9-eFvtZw_N4xLZ_0pOUq-LalE8YjRsGXuiLbZTcIaxXzblN-drjD-Nzlarht3aKG-ikZ3NwAllfEYy1dXlcXm3yVFNxYJkFq7NVlWtMVboLC1fmqF-t5oDj8ehnyi8WDjGKBFHamfqgBV0"/>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-body-lg mb-2">Nebula Cruise</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Our flagship luxury liner designed for multi-week orbital stays and lunar transits.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section (4) -->
+<section class="py-20 px-6 reveal" id="experience">
+<div class="grid grid-cols-1 gap-6">
+<div class="glass-panel-deep p-8 rounded-3xl flex flex-col items-center text-center group hover:border-tertiary/50 transition-colors duration-500">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<h4 class="font-headline-md text-body-lg mb-2">Zero-G Dining</h4>
+<p class="font-body-md text-on-surface-variant">Michelin-star cuisine served in an environment where gravity is optional.</p>
+</div>
+<div class="glass-panel-deep p-8 rounded-3xl flex flex-col items-center text-center group hover:border-tertiary/50 transition-colors duration-500">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<h4 class="font-headline-md text-body-lg mb-2">Orbital Views</h4>
+<p class="font-body-md text-on-surface-variant">24/7 access to panoramic viewing decks overlooking the Earth's curve.</p>
+</div>
+<div class="glass-panel-deep p-8 rounded-3xl flex flex-col items-center text-center group hover:border-tertiary/50 transition-colors duration-500">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
+<h4 class="font-headline-md text-body-lg mb-2">Quantum Comms</h4>
+<p class="font-body-md text-on-surface-variant">Stay connected with latency-free communication to anywhere on Earth.</p>
+</div>
+</div>
+</section>
+<!-- Destinations Section (5) -->
+<section class="py-20 reveal" id="destinations">
+<div class="px-6 mb-8 text-center">
+<h2 class="font-headline-md text-headline-lg-mobile">DESTINATIONS</h2>
+</div>
+<div class="grid grid-cols-1 gap-1 px-6">
+<div class="relative h-64 rounded-t-3xl overflow-hidden group cursor-pointer reveal">
+<img alt="Lunar Colony" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4PSQDxbxH6PTLgpjFasqKbCfKIrcCqff-PSD3e1Vw26ghyNpoqTkYJ7W0_QmMRDOQXytgqfEbsKP-BH2D1dS-FhmJX55EOLqKztl97qWOsZ9LWsnP9MjraCI0W0-X2N2tKcQ0yl3bEo-bbgRUPqfJXfiC3Vlf9Okii3BXyrg-st5rZTRO-Rq8YzA-n2lVXCNbRny5_2wCArwLKtT99DdcxqSgkr7YQAV9NgOAnVAOhVj0bIN-vEsEYcu4fqoUlfTmoSpUWddwYAk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex flex-col justify-end p-6 group-hover:from-background transition-colors">
+<span class="font-label-caps text-label-caps text-tertiary">TERRA 1</span>
+<h4 class="font-headline-md text-body-lg">Lunar Colony</h4>
+</div>
+</div>
+<div class="relative h-64 overflow-hidden group cursor-pointer reveal" style="transition-delay: 100ms;">
+<img alt="Mars Outpost" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqaNetHdh2OKyWKPC6xy96L51H3_FUJ8q6mkKxQH0fXgoJiiC7o1UaO9XrrL0YjdGTl_xxYwZvhj_R_uenU60o-xR8LAl3rJw6o8WTVfRqCmKDvvAgo_BQu9dUQS8X5hSw5Tk0y5vaN--ceOc-9txabuJwYBoTW_gfxFAwDdhF3za6xnG0excwOhwDJ8YVJodfdysAZASPtADiATriVhgYjUNAA8oEUEz5jrcAK27fh3krAz5YDwxQxvLpaCvDCGHIkhIuy5nXH9o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex flex-col justify-end p-6 group-hover:from-background transition-colors">
+<span class="font-label-caps text-label-caps text-tertiary">ARES PRIME</span>
+<h4 class="font-headline-md text-body-lg">Mars Outpost</h4>
+</div>
+</div>
+<div class="relative h-64 rounded-b-3xl overflow-hidden group cursor-pointer reveal" style="transition-delay: 200ms;">
+<img alt="Saturn Rings" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG7ItQ0jwFdH8FICwHnoAitLnQ80eEFHno29MxzMTeoni6RPh5Duw9R7vbBargFpKRHov6l-msoSIedPUxOTvotHr_9Ts0-9k5pUWHYMF1vucWi2OHSn9yhHjCCelLbGZCES8SjTlty9JubEUkRxR25KMq603do7oci2B9hMLCo8XxYAFBemL4-P7ELfe10YICR5TXjAsnmmdW4j3pKtm_yIXkGKL6NmRrCfgl-AjlpUrzGKsiQHRdE61Kwf1FnfkSMR_SWZL2PTo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex flex-col justify-end p-6 group-hover:from-background transition-colors">
+<span class="font-label-caps text-label-caps text-tertiary">AURORA BASE</span>
+<h4 class="font-headline-md text-body-lg">Saturn Rings</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Safety Section (6) -->
+<section class="py-24 px-6 reveal" id="safety">
+<div class="glass-panel rounded-3xl p-8 border-tertiary/20 group">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full border border-tertiary flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-1000">
+<span class="material-symbols-outlined text-tertiary">shield</span>
+</div>
+<h2 class="font-headline-md text-body-lg">Safety Protocols</h2>
+</div>
+<div class="space-y-8">
+<div class="flex gap-4 reveal">
+<span class="font-label-caps text-tertiary text-xs">01</span>
+<p class="font-body-md text-sm border-b border-white/5 pb-4 w-full">Triple-redundant life support systems with independent power cells.</p>
+</div>
+<div class="flex gap-4 reveal" style="transition-delay: 100ms;">
+<span class="font-label-caps text-tertiary text-xs">02</span>
+<p class="font-body-md text-sm border-b border-white/5 pb-4 w-full">Advanced AI navigation with real-time solar flare prediction.</p>
+</div>
+<div class="flex gap-4 reveal" style="transition-delay: 200ms;">
+<span class="font-label-caps text-tertiary text-xs">03</span>
+<p class="font-body-md text-sm border-b border-white/5 pb-4 w-full">Radiation-shielded reinforced hull designed for deep space travel.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pioneers Section (7) -->
+<section class="py-20 reveal" id="pioneers">
+<div class="px-6 mb-8">
+<h2 class="font-headline-md text-headline-lg-mobile">COSMIC VOYAGERS</h2>
+</div>
+<div class="px-6">
+<div class="glass-panel p-8 rounded-3xl italic relative group">
+<span class="material-symbols-outlined absolute -top-4 left-6 text-tertiary bg-background p-1 text-3xl group-hover:scale-125 transition-transform duration-300">format_quote</span>
+<p class="font-body-lg text-on-surface mb-6">"Seeing the Earth as a single, fragile entity changed my perspective on life forever. Cosmos made the journey feel like a homecoming."</p>
+<div class="flex items-center gap-4 not-italic">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-white/20">
+<img alt="Elena Vance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE9fcOtBPJqK_ph4WkCc7C1ZzKuU-3sKQ6o8wt0MH9Rb-baVZvmrkjsH1nJu5BjbPZk9MyQ9h5EVgnjWKbArpFoJjamxuXANNzkmsOouy2ai5owsG2gT5jQJ_ZcxYDuDhu3au679v9ccUA8UAVTrv3NUsn2kwW5gX6wDRPVc1wrDzASTIjq7pOMi4Fw6UGQuDtgu_iX_8z1qVsvVeRWys6Sxjd_F_uDY7KjrgLxUEOniwv0upqMLo76sueBpCpZSc0J816cqPHajk"/>
+</div>
+<div>
+<span class="block font-headline-md text-body-md">Elena Vance</span>
+<span class="block font-label-caps text-label-caps text-tertiary">ORBITAL ARTIST</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section (8) -->
+<section class="py-24 px-6 text-center relative overflow-hidden reveal" id="cta">
+<div class="absolute inset-0 bg-tertiary/5 blur-3xl -z-10 animate-pulse"></div>
+<div class="w-24 mx-auto mb-8 animate-float">
+<span class="material-symbols-outlined text-tertiary text-6xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile mb-8">Your journey begins at the edge of space.</h2>
+<button class="w-full bg-tertiary text-on-tertiary font-label-caps text-label-caps py-5 rounded-full glow-hover transition-all duration-300 tracking-widest relative overflow-hidden group">
+<span class="relative z-10">RESERVE YOUR SEAT</span>
+</button>
+</section>
+</main>
+<footer class="w-full bg-surface-container-lowest/80 backdrop-blur-2xl border-t border-white/10 px-6 py-16 flex flex-col gap-10 reveal">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="text-headline-lg font-headline-lg text-primary uppercase">COSMOS</span>
+</div>
+<p class="font-body-md text-on-surface-variant max-w-xs">Leading the era of civilian aerospace through precision engineering and elite hospitality.</p>
+</div>
+<nav class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-tertiary">EXPLORE</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">The Mission</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Fleet</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Safety</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-tertiary">COMPANY</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</nav>
+<div class="border-t border-white/5 pt-8">
+<p class="text-label-caps font-label-caps text-on-surface-variant/50 text-center">© 2024 COSMOS AEROSPACE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Particle System
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5;
+                this.speedX = (Math.random() - 0.5) * 0.2;
+                this.speedY = (Math.random() - 0.5) * 0.2;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 150; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Intersection Observer for Entrance Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Parallax and Header Effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+
+            // Hero Parallax (Scale & Translation)
+            const heroParallax = document.getElementById('hero-parallax');
+            if (heroParallax) {
+                const img = heroParallax.querySelector('img');
+                const scale = 1.1 + (scrolled * 0.0002);
+                const yPos = scrolled * 0.35;
+                img.style.transform = `scale(${scale}) translateY(${yPos}px)`;
+            }
+
+            // Nav transparency shift
+            const nav = document.getElementById('nav-shell');
+            if (scrolled > 50) {
+                nav.style.backgroundColor = 'rgba(17, 20, 21, 0.85)';
+                nav.style.borderColor = 'rgba(0, 220, 229, 0.2)';
+            } else {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                nav.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }
+        });
+
+        // Trigger initial reveal for items in viewport
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body></html>
