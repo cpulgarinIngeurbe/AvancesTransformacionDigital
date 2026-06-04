@@ -1,497 +1,457 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>COSMOS | Private Space Travel</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&amp;family=Geist:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "tertiary-fixed": "#63f7ff",
-                        "tertiary-container": "#00797e",
-                        "inverse-on-surface": "#2e3132",
-                        "primary-fixed-dim": "#b8c3ff",
-                        "on-surface": "#e1e3e4",
-                        "secondary-fixed": "#eddcff",
-                        "surface-container-high": "#282a2b",
-                        "surface-container-highest": "#323536",
-                        "on-tertiary-fixed-variant": "#004f53",
-                        "on-tertiary-fixed": "#002021",
-                        "surface-container-low": "#191c1d",
-                        "primary": "#b8c3ff",
-                        "on-background": "#e1e3e4",
-                        "secondary": "#d8b9ff",
-                        "on-primary-fixed-variant": "#0035be",
-                        "surface-tint": "#b8c3ff",
-                        "surface-variant": "#323536",
-                        "surface-bright": "#373a3b",
-                        "on-primary-fixed": "#001356",
-                        "on-secondary-fixed-variant": "#6200bc",
-                        "on-surface-variant": "#c4c5d9",
-                        "tertiary": "#00dce5",
-                        "surface-container-lowest": "#0c0f10",
-                        "outline-variant": "#434656",
-                        "surface-container": "#1d2021",
-                        "on-secondary-fixed": "#290055",
-                        "inverse-surface": "#e1e3e4",
-                        "on-primary-container": "#efefff",
-                        "background": "#111415",
-                        "on-tertiary": "#003739",
-                        "on-secondary-container": "#d5b5ff",
-                        "on-secondary": "#450086",
-                        "on-tertiary-container": "#bbfbff",
+                        "on-background": "#e5e2dd",
+                        "secondary-container": "#464a18",
+                        "on-secondary-container": "#b5b97c",
+                        "on-tertiary-fixed-variant": "#3d4c00",
+                        "on-secondary": "#2f3303",
+                        "secondary-fixed": "#e3e7a6",
+                        "surface-container-low": "#1c1c19",
+                        "on-surface": "#e5e2dd",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#c7c9a3",
+                        "on-tertiary-fixed": "#171e00",
+                        "on-primary-container": "#646747",
+                        "inverse-on-surface": "#31302d",
+                        "on-primary": "#303217",
+                        "on-tertiary": "#293500",
+                        "tertiary-container": "#ccf144",
+                        "secondary": "#c7cb8c",
                         "error": "#ffb4ab",
-                        "secondary-container": "#6e06d0",
-                        "outline": "#8e90a2",
-                        "primary-fixed": "#dde1ff",
-                        "on-primary": "#002388"
+                        "on-primary-fixed": "#1b1d05",
+                        "inverse-surface": "#e5e2dd",
+                        "surface-variant": "#353532",
+                        "tertiary-fixed-dim": "#b0d426",
+                        "primary-fixed": "#e3e5be",
+                        "tertiary": "#ffffff",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#586c00",
+                        "primary": "#ffffff",
+                        "surface-tint": "#c7c9a3",
+                        "primary-container": "#e3e5be",
+                        "surface-bright": "#3a3936",
+                        "secondary-fixed-dim": "#c7cb8c",
+                        "surface-container": "#20201d",
+                        "on-surface-variant": "#c8c7ba",
+                        "on-primary-fixed-variant": "#46492c",
+                        "on-secondary-fixed-variant": "#464a18",
+                        "surface-container-lowest": "#0e0e0c",
+                        "on-secondary-fixed": "#1b1d00",
+                        "outline-variant": "#47473e",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#5e6141",
+                        "surface-dim": "#141311",
+                        "surface": "#141311",
+                        "outline": "#929186",
+                        "tertiary-fixed": "#ccf144",
+                        "background": "#141311",
+                        "surface-container-highest": "#353532",
+                        "surface-container-high": "#2a2a27"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
                     },
                     "spacing": {
-                        "section-gap": "80px",
-                        "container-padding": "40px",
-                        "base": "8px",
-                        "gutter": "24px"
+                        "stack-xl": "80px",
+                        "stack-xs": "4px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "container-max": "1440px",
+                        "stack-lg": "48px"
                     },
                     "fontFamily": {
-                        "body-md": ["Geist"],
-                        "headline-lg-mobile": ["Sora"],
-                        "headline-md": ["Sora"],
-                        "body-lg": ["Geist"],
-                        "display-lg": ["Sora"],
-                        "headline-lg": ["Sora"],
-                        "label-caps": ["JetBrains Mono"]
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"]
                     },
                     "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
-                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}]
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "500"}]
                     }
-                },
-            },
+                }
+            }
         }
     </script>
 <style>
-        html {
+        body {
+            background-color: #141311;
+            color: #e5e2dd;
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-left: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
+        .glass-card {
+            background: rgba(28, 28, 25, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .glass-panel-deep {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
+        .data-flow-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 3s forwards ease-in-out;
         }
-
-        /* Shimmer Effect */
-        .glass-panel::after, .glass-panel-deep::after, button::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.05) 45%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(255, 255, 255, 0.05) 55%,
-                transparent 100%
-            );
-            transform: rotate(-45deg);
-            transition: all 0.6s;
-            pointer-events: none;
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+        .pulse-node {
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(204, 241, 68, 0.4)); }
+            50% { filter: drop-shadow(0 0 20px rgba(204, 241, 68, 0.8)); }
+        }
+        .reveal-stage {
             opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .glass-panel:hover::after, .glass-panel-deep:hover::after, button:hover::after {
-            opacity: 1;
-            animation: shimmer 1.5s infinite;
-        }
-        @keyframes shimmer {
-            0% { transform: translate(-30%, -30%) rotate(-45deg); }
-            100% { transform: translate(30%, 30%) rotate(-45deg); }
-        }
-
-        /* Reveal Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity;
-        }
-        .reveal.active {
+        .reveal-stage.active {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Floating Animation */
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .glow-hover:hover {
-            box-shadow: 0 0 25px rgba(0, 220, 229, 0.5);
-            transform: scale(0.98);
-        }
-        .parallax-bg {
-            will-change: transform;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Particle Canvas */
-        #particle-canvas {
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccf144;
+            border-radius: 50%;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             pointer-events: none;
-            z-index: -1;
-            opacity: 0.4;
+            z-index: 9999;
+            transition: transform 0.1s ease;
         }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body-md selection:bg-tertiary selection:text-on-tertiary overflow-x-hidden">
-<canvas id="particle-canvas"></canvas>
-<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full backdrop-blur-xl border border-white/20 bg-white/10 dark:bg-surface-container/10 flex justify-between items-center px-6 py-3 z-50 shadow-[0_0_30px_rgba(0,220,229,0.15)]" id="nav-shell">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-<span class="text-headline-md font-headline-md tracking-widest text-on-surface uppercase">COSMOS</span>
+<body class="font-body-md">
+<div class="custom-cursor" id="cursor"></div>
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-stack-sm bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_0_40px_rgba(163,198,16,0.15)]">
+<div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tighter">
+            AETHELGARD
+        </div>
+<div class="hidden md:flex gap-stack-lg items-center">
+<a class="font-headline-md text-headline-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Timeline</a>
+<a class="font-headline-md text-headline-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Analysis</a>
+<a class="font-headline-md text-headline-md tracking-widest uppercase text-primary border-b-2 border-primary pb-1" href="#">Strategy</a>
 </div>
-<button class="bg-tertiary text-on-tertiary px-5 py-2 rounded-full font-label-caps text-label-caps glow-hover transition-all duration-300 relative overflow-hidden">
-            RESERVE NOW
-        </button>
-</header>
-<main class="relative">
-<!-- Hero Section (1) -->
-<section class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden" id="hero">
-<div class="absolute inset-0 z-0 overflow-hidden" id="hero-parallax">
-<img alt="Majestic snow leopard astronaut" class="w-full h-full object-cover scale-110 parallax-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1GnsXj65rqZ2a1FHCeV74rcKSOTjbQvJxUJHCaUev8ct3mdHTsGVxph3ot_Vm07XGFiUAEzP0XGCmX9HYt1EvRKt5SCmpEQIK78Xx8CRuDZAHLsaxckag9zAyn2z7sQyN4YW3pcRQnKgaWkxAOB7FWaIMt5_wTTQgGXC2vCjeId1RMcm7tZRuiaKYXJ2IUf7MQKPlWokt2Dwo-b08SqJ4psl6wsStkToDX5n_0O6eb4oUefSpV9S4qa3BYkTV07fcxvwbpUMJaRQ"/>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
-</div>
-<div class="relative z-10 text-center px-4 mt-20">
-<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg tracking-tighter leading-tight drop-shadow-2xl reveal">
-                    THE GALAXY<br/><span class="text-tertiary">AWAITS</span>
-</h1>
-<p class="mt-6 font-body-md text-on-surface-variant max-w-xs mx-auto reveal" style="transition-delay: 200ms;">
-                    Experience the sublime silence of the void from the comfort of our pressurized viewing portals.
-                </p>
-</div>
-<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal animate-float" style="transition-delay: 500ms;">
-<span class="text-label-caps font-label-caps opacity-50">ORBITAL SCAN</span>
-<div class="w-px h-12 bg-gradient-to-b from-tertiary to-transparent"></div>
-</div>
-</section>
-<!-- Mission Section (2) -->
-<section class="py-24 px-6 relative reveal" id="mission">
-<div class="glass-panel rounded-3xl p-8 max-w-md mx-auto relative overflow-hidden group">
-<div class="absolute -top-10 -right-10 w-32 h-32 bg-tertiary/20 blur-3xl rounded-full group-hover:bg-tertiary/30 transition-colors duration-500"></div>
-<h2 class="font-label-caps text-label-caps text-tertiary mb-4">REDEFINING THE HORIZON</h2>
-<h3 class="font-headline-md text-headline-lg-mobile mb-6">Lumina Orbital</h3>
-<p class="font-body-md text-on-surface-variant leading-relaxed">
-                    Our mission is to democratize the celestial experience. We bridge the gap between imagination and the immense beauty of the cosmos, providing unparalleled safety and luxury at the edge of space.
-                </p>
-<div class="mt-10 grid grid-cols-2 gap-4">
-<div class="border-l border-tertiary/30 pl-4">
-<span class="block font-label-caps text-label-caps text-tertiary">ALTITUDE</span>
-<span class="font-label-caps text-body-lg">400 KM</span>
-</div>
-<div class="border-l border-tertiary/30 pl-4">
-<span class="block font-label-caps text-label-caps text-tertiary">VELOCITY</span>
-<span class="font-label-caps text-body-lg">7.6 KM/S</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Fleet Section (3) -->
-<section class="py-20 reveal" id="fleet">
-<div class="px-6 mb-8">
-<h2 class="font-headline-md text-headline-lg-mobile">THE FLEET</h2>
-<div class="w-12 h-1 bg-tertiary mt-2"></div>
-</div>
-<div class="flex overflow-x-auto gap-6 px-6 no-scrollbar pb-10">
-<div class="min-w-[280px] glass-panel rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-tertiary/10 transition-all duration-500">
-<div class="h-48 overflow-hidden">
-<img alt="Astra Vanguard Shuttle" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYRrwKaKpFVEIrxEIPBBC8OKcqusabAYhh-9gbcOR7oLmPZEc8jnD8h2yjCksNdK3PIzKAxMIrugeJVJUeTRW-t0FbNxs_Mvv6G1GaNaCjN2wKmTQm22_QIPCBE70Lz_fHHC5SF4kVjEPLRbJP2gEPUpZDvMo3ekpgJLPeU8BKLF_LylSBBOGhZGTxO8FlbwQtRr28kOcnZaSHE5HqFsnqOoQ02AFwW1GIeeHl9ssdoJwSP9F0DDUTRZDcyb9GwilokGsk-G26moQ"/>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-body-lg mb-2">Astra Vanguard</h4>
-<p class="font-body-md text-on-surface-variant text-sm">Hypersonic sub-orbital shuttle for rapid global transit and low-earth excursions.</p>
-</div>
-</div>
-<div class="min-w-[280px] glass-panel rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-tertiary/10 transition-all duration-500">
-<div class="h-48 overflow-hidden">
-<img alt="Nebula Cruise Liner" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXrPpGUwshoZzXXeZb-_eTnhBtbqGGSJcZAo_rRPSoS1ewtAQVFswWWVPWBJh_XrT7RCBhsvW9EiVhLhkMIbUle1VFnBWUk4IupfAHfzl3mp8QDVOzIQPAMKxksqVlM9-eFvtZw_N4xLZ_0pOUq-LalE8YjRsGXuiLbZTcIaxXzblN-drjD-Nzlarht3aKG-ikZ3NwAllfEYy1dXlcXm3yVFNxYJkFq7NVlWtMVboLC1fmqF-t5oDj8ehnyi8WDjGKBFHamfqgBV0"/>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-body-lg mb-2">Nebula Cruise</h4>
-<p class="font-body-md text-on-surface-variant text-sm">Our flagship luxury liner designed for multi-week orbital stays and lunar transits.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Experience Section (4) -->
-<section class="py-20 px-6 reveal" id="experience">
-<div class="grid grid-cols-1 gap-6">
-<div class="glass-panel-deep p-8 rounded-3xl flex flex-col items-center text-center group hover:border-tertiary/50 transition-colors duration-500">
-<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">restaurant</span>
-<h4 class="font-headline-md text-body-lg mb-2">Zero-G Dining</h4>
-<p class="font-body-md text-on-surface-variant">Michelin-star cuisine served in an environment where gravity is optional.</p>
-</div>
-<div class="glass-panel-deep p-8 rounded-3xl flex flex-col items-center text-center group hover:border-tertiary/50 transition-colors duration-500">
-<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">visibility</span>
-<h4 class="font-headline-md text-body-lg mb-2">Orbital Views</h4>
-<p class="font-body-md text-on-surface-variant">24/7 access to panoramic viewing decks overlooking the Earth's curve.</p>
-</div>
-<div class="glass-panel-deep p-8 rounded-3xl flex flex-col items-center text-center group hover:border-tertiary/50 transition-colors duration-500">
-<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
-<h4 class="font-headline-md text-body-lg mb-2">Quantum Comms</h4>
-<p class="font-body-md text-on-surface-variant">Stay connected with latency-free communication to anywhere on Earth.</p>
-</div>
-</div>
-</section>
-<!-- Destinations Section (5) -->
-<section class="py-20 reveal" id="destinations">
-<div class="px-6 mb-8 text-center">
-<h2 class="font-headline-md text-headline-lg-mobile">DESTINATIONS</h2>
-</div>
-<div class="grid grid-cols-1 gap-1 px-6">
-<div class="relative h-64 rounded-t-3xl overflow-hidden group cursor-pointer reveal">
-<img alt="Lunar Colony" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4PSQDxbxH6PTLgpjFasqKbCfKIrcCqff-PSD3e1Vw26ghyNpoqTkYJ7W0_QmMRDOQXytgqfEbsKP-BH2D1dS-FhmJX55EOLqKztl97qWOsZ9LWsnP9MjraCI0W0-X2N2tKcQ0yl3bEo-bbgRUPqfJXfiC3Vlf9Okii3BXyrg-st5rZTRO-Rq8YzA-n2lVXCNbRny5_2wCArwLKtT99DdcxqSgkr7YQAV9NgOAnVAOhVj0bIN-vEsEYcu4fqoUlfTmoSpUWddwYAk"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex flex-col justify-end p-6 group-hover:from-background transition-colors">
-<span class="font-label-caps text-label-caps text-tertiary">TERRA 1</span>
-<h4 class="font-headline-md text-body-lg">Lunar Colony</h4>
-</div>
-</div>
-<div class="relative h-64 overflow-hidden group cursor-pointer reveal" style="transition-delay: 100ms;">
-<img alt="Mars Outpost" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqaNetHdh2OKyWKPC6xy96L51H3_FUJ8q6mkKxQH0fXgoJiiC7o1UaO9XrrL0YjdGTl_xxYwZvhj_R_uenU60o-xR8LAl3rJw6o8WTVfRqCmKDvvAgo_BQu9dUQS8X5hSw5Tk0y5vaN--ceOc-9txabuJwYBoTW_gfxFAwDdhF3za6xnG0excwOhwDJ8YVJodfdysAZASPtADiATriVhgYjUNAA8oEUEz5jrcAK27fh3krAz5YDwxQxvLpaCvDCGHIkhIuy5nXH9o"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex flex-col justify-end p-6 group-hover:from-background transition-colors">
-<span class="font-label-caps text-label-caps text-tertiary">ARES PRIME</span>
-<h4 class="font-headline-md text-body-lg">Mars Outpost</h4>
-</div>
-</div>
-<div class="relative h-64 rounded-b-3xl overflow-hidden group cursor-pointer reveal" style="transition-delay: 200ms;">
-<img alt="Saturn Rings" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG7ItQ0jwFdH8FICwHnoAitLnQ80eEFHno29MxzMTeoni6RPh5Duw9R7vbBargFpKRHov6l-msoSIedPUxOTvotHr_9Ts0-9k5pUWHYMF1vucWi2OHSn9yhHjCCelLbGZCES8SjTlty9JubEUkRxR25KMq603do7oci2B9hMLCo8XxYAFBemL4-P7ELfe10YICR5TXjAsnmmdW4j3pKtm_yIXkGKL6NmRrCfgl-AjlpUrzGKsiQHRdE61Kwf1FnfkSMR_SWZL2PTo"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex flex-col justify-end p-6 group-hover:from-background transition-colors">
-<span class="font-label-caps text-label-caps text-tertiary">AURORA BASE</span>
-<h4 class="font-headline-md text-body-lg">Saturn Rings</h4>
-</div>
-</div>
-</div>
-</section>
-<!-- Safety Section (6) -->
-<section class="py-24 px-6 reveal" id="safety">
-<div class="glass-panel rounded-3xl p-8 border-tertiary/20 group">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-12 h-12 rounded-full border border-tertiary flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-1000">
-<span class="material-symbols-outlined text-tertiary">shield</span>
-</div>
-<h2 class="font-headline-md text-body-lg">Safety Protocols</h2>
-</div>
-<div class="space-y-8">
-<div class="flex gap-4 reveal">
-<span class="font-label-caps text-tertiary text-xs">01</span>
-<p class="font-body-md text-sm border-b border-white/5 pb-4 w-full">Triple-redundant life support systems with independent power cells.</p>
-</div>
-<div class="flex gap-4 reveal" style="transition-delay: 100ms;">
-<span class="font-label-caps text-tertiary text-xs">02</span>
-<p class="font-body-md text-sm border-b border-white/5 pb-4 w-full">Advanced AI navigation with real-time solar flare prediction.</p>
-</div>
-<div class="flex gap-4 reveal" style="transition-delay: 200ms;">
-<span class="font-label-caps text-tertiary text-xs">03</span>
-<p class="font-body-md text-sm border-b border-white/5 pb-4 w-full">Radiation-shielded reinforced hull designed for deep space travel.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Pioneers Section (7) -->
-<section class="py-20 reveal" id="pioneers">
-<div class="px-6 mb-8">
-<h2 class="font-headline-md text-headline-lg-mobile">COSMIC VOYAGERS</h2>
-</div>
-<div class="px-6">
-<div class="glass-panel p-8 rounded-3xl italic relative group">
-<span class="material-symbols-outlined absolute -top-4 left-6 text-tertiary bg-background p-1 text-3xl group-hover:scale-125 transition-transform duration-300">format_quote</span>
-<p class="font-body-lg text-on-surface mb-6">"Seeing the Earth as a single, fragile entity changed my perspective on life forever. Cosmos made the journey feel like a homecoming."</p>
-<div class="flex items-center gap-4 not-italic">
-<div class="w-12 h-12 rounded-full overflow-hidden border border-white/20">
-<img alt="Elena Vance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE9fcOtBPJqK_ph4WkCc7C1ZzKuU-3sKQ6o8wt0MH9Rb-baVZvmrkjsH1nJu5BjbPZk9MyQ9h5EVgnjWKbArpFoJjamxuXANNzkmsOouy2ai5owsG2gT5jQJ_ZcxYDuDhu3au679v9ccUA8UAVTrv3NUsn2kwW5gX6wDRPVc1wrDzASTIjq7pOMi4Fw6UGQuDtgu_iX_8z1qVsvVeRWys6Sxjd_F_uDY7KjrgLxUEOniwv0upqMLo76sueBpCpZSc0J816cqPHajk"/>
-</div>
-<div>
-<span class="block font-headline-md text-body-md">Elena Vance</span>
-<span class="block font-label-caps text-label-caps text-tertiary">ORBITAL ARTIST</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section (8) -->
-<section class="py-24 px-6 text-center relative overflow-hidden reveal" id="cta">
-<div class="absolute inset-0 bg-tertiary/5 blur-3xl -z-10 animate-pulse"></div>
-<div class="w-24 mx-auto mb-8 animate-float">
-<span class="material-symbols-outlined text-tertiary text-6xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-</div>
-<h2 class="font-headline-lg text-headline-lg-mobile mb-8">Your journey begins at the edge of space.</h2>
-<button class="w-full bg-tertiary text-on-tertiary font-label-caps text-label-caps py-5 rounded-full glow-hover transition-all duration-300 tracking-widest relative overflow-hidden group">
-<span class="relative z-10">RESERVE YOUR SEAT</span>
-</button>
-</section>
-</main>
-<footer class="w-full bg-surface-container-lowest/80 backdrop-blur-2xl border-t border-white/10 px-6 py-16 flex flex-col gap-10 reveal">
-<div class="flex flex-col gap-6">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-<span class="text-headline-lg font-headline-lg text-primary uppercase">COSMOS</span>
-</div>
-<p class="font-body-md text-on-surface-variant max-w-xs">Leading the era of civilian aerospace through precision engineering and elite hospitality.</p>
-</div>
-<nav class="grid grid-cols-2 gap-8">
-<div class="flex flex-col gap-4">
-<span class="font-label-caps text-label-caps text-tertiary">EXPLORE</span>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">The Mission</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Fleet</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Safety</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-caps text-label-caps text-tertiary">COMPANY</span>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<div class="flex items-center gap-stack-md">
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-stack-md py-stack-xs rounded font-label-sm uppercase tracking-wider hover:bg-white transition-all cursor-none active:scale-95">
+                Contact Executive
+            </button>
+<span class="material-symbols-outlined text-primary text-3xl cursor-none" data-icon="account_circle">account_circle</span>
 </div>
 </nav>
-<div class="border-t border-white/5 pt-8">
-<p class="text-label-caps font-label-caps text-on-surface-variant/50 text-center">© 2024 COSMOS AEROSPACE. ALL RIGHTS RESERVED.</p>
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center justify-center gap-stack-md z-40 bg-surface-container-low/40 backdrop-blur-2xl border-r border-white/5 w-20">
+<div class="flex flex-col gap-stack-lg items-center">
+<div class="group relative flex items-center justify-center">
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 flex items-center justify-center rounded-full text-outline hover:text-primary transition-all hover:scale-125 duration-500 cursor-none">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
 </div>
-</footer>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">PHASE 01</span>
+</div>
+</div>
+<div class="group relative flex items-center justify-center">
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 flex items-center justify-center rounded-full text-outline hover:text-primary transition-all hover:scale-125 duration-500 cursor-none">
+<span class="material-symbols-outlined" data-icon="construction">construction</span>
+</div>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">PHASE 02</span>
+</div>
+</div>
+<div class="group relative flex items-center justify-center">
+<div class="flex flex-col items-center gap-1">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed rounded-full scale-110 shadow-[0_0_15px_rgba(204,241,68,0.4)] w-12 h-12 flex items-center justify-center cursor-none">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter text-tertiary-fixed">PHASE 03</span>
+</div>
+</div>
+<div class="group relative flex items-center justify-center">
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 flex items-center justify-center rounded-full text-outline hover:text-primary transition-all hover:scale-125 duration-500 cursor-none">
+<span class="material-symbols-outlined" data-icon="domain_verification">domain_verification</span>
+</div>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">PHASE 04</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="ml-20">
+<!-- SECTION 5: PROCESS AUTOMATION -->
+<section class="min-h-screen relative flex flex-col justify-center items-center overflow-hidden pt-24 px-margin-desktop">
+<div class="absolute inset-0 z-0 opacity-20">
+<img alt="Automation Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIemVU2uoqITmxIDW3sN9dS7dEBNGprLGt-K2zGHWlSfsxYxrHTNErpKGOt7lCxeHkAzIb-YdxJTqYaj66IyKTj8gI4sM31L8VQTjEpiqV-9RTSn3Cu1kqaFPg_OG4RuSl1AzLwvtYBjtuJpBF6G9jZDBlh7d9DJxjsbkE8QMYk76OccQKHRcyh4nsSTK2TyF4uEudHt9xTNQN3I7qcCPrciNT8HiASt4Q6jmSTyPrXyGZzTOEbvFYRekmesJpUAxC-agF0IXt-Uq0"/>
+</div>
+<div class="relative z-10 w-full max-w-container-max">
+<div class="mb-stack-xl text-center">
+<span class="font-label-sm text-tertiary-fixed uppercase tracking-[0.3em] mb-4 block">05 / Ecosistema Digital</span>
+<h1 class="font-display-lg text-display-lg uppercase mb-4">AUTOMATIZACIÓN DE PROCESOS</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Reduciendo tareas manuales y acelerando la toma de decisiones mediante flujos de datos inteligentes y analítica avanzada.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<!-- Central Node Visualization -->
+<div class="relative h-[500px] flex items-center justify-center" id="automation-viz">
+<!-- SVG Connections -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 500 500">
+<path class="data-flow-line" d="M250,250 L100,100" fill="none" id="path-1" stroke="#ccf144" stroke-width="1"></path>
+<path class="data-flow-line" d="M250,250 L400,100" fill="none" id="path-2" stroke="#ccf144" stroke-width="1"></path>
+<path class="data-flow-line" d="M250,250 L100,400" fill="none" id="path-3" stroke="#ccf144" stroke-width="1"></path>
+<path class="data-flow-line" d="M250,250 L400,400" fill="none" id="path-4" stroke="#ccf144" stroke-width="1"></path>
+<path class="data-flow-line" d="M250,250 L250,50" fill="none" id="path-5" stroke="#ccf144" stroke-width="1"></path>
+<!-- Moving Light Paths -->
+<circle fill="#ffffff" r="3">
+<animatemotion dur="3s" path="M250,250 L100,100" repeatcount="indefinite"></animatemotion>
+</circle>
+<circle fill="#ffffff" r="3">
+<animatemotion dur="2.5s" path="M250,250 L400,100" repeatcount="indefinite"></animatemotion>
+</circle>
+<circle fill="#ffffff" r="3">
+<animatemotion dur="4s" path="M250,250 L100,400" repeatcount="indefinite"></animatemotion>
+</circle>
+</svg>
+<!-- Nodes -->
+<div class="absolute z-20 flex flex-col items-center">
+<div class="w-32 h-32 rounded-full glass-card flex items-center justify-center border-2 border-tertiary-fixed pulse-node">
+<span class="font-label-sm text-center px-2 leading-tight">GERENCIA DE CONSTRUCCIÓN</span>
+</div>
+</div>
+<!-- Connected Apps -->
+<div class="absolute top-[80px] left-[80px] glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-tertiary-fixed" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-sm text-[10px]">POWER BI</span>
+</div>
+<div class="absolute top-[80px] right-[80px] glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-tertiary-fixed" data-icon="cloud_sync">cloud_sync</span>
+<span class="font-label-sm text-[10px]">SHAREPOINT</span>
+</div>
+<div class="absolute bottom-[80px] left-[80px] glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-tertiary-fixed" data-icon="code">code</span>
+<span class="font-label-sm text-[10px]">GITHUB</span>
+</div>
+<div class="absolute bottom-[80px] right-[80px] glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-tertiary-fixed" data-icon="bolt">bolt</span>
+<span class="font-label-sm text-[10px]">AUTOMATE</span>
+</div>
+<div class="absolute top-0 glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-tertiary-fixed" data-icon="psychology">psychology</span>
+<span class="font-label-sm text-[10px]">AI ENGINE</span>
+</div>
+</div>
+<!-- Case Studies -->
+<div class="space-y-stack-md">
+<div class="glass-card p-stack-lg border-l-4 border-tertiary-fixed">
+<h3 class="font-headline-md text-headline-md mb-2">Automated Reporting</h3>
+<p class="text-on-surface-variant font-body-md mb-4">Consolidación en tiempo real de reportes diarios de obra, eliminando 15 horas semanales de carga administrativa por proyecto.</p>
+<div class="flex items-center gap-2">
+<span class="bg-secondary-container text-on-secondary-container text-xs px-2 py-1 rounded">Solución: PowerApps + SQL</span>
+<span class="text-tertiary-fixed font-label-sm">+25% Eficiencia</span>
+</div>
+</div>
+<div class="glass-card p-stack-lg border-l-4 border-outline">
+<h3 class="font-headline-md text-headline-md mb-2">Data Consolidation</h3>
+<p class="text-on-surface-variant font-body-md mb-4">Unificación de fuentes heterogéneas (ERP, CRM, BIM) en un Data Lake centralizado para analítica predictiva.</p>
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-highest text-on-surface text-xs px-2 py-1 rounded">Solución: Azure Data Factory</span>
+<span class="text-on-surface-variant font-label-sm">Integridad 99.9%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: PLANNING -->
+<section class="min-h-screen relative flex flex-col justify-center items-center py-stack-xl px-margin-desktop bg-surface-container-lowest">
+<div class="w-full max-w-container-max">
+<div class="mb-stack-xl">
+<span class="font-label-sm text-tertiary-fixed uppercase tracking-[0.3em] mb-4 block">06 / Excelencia Operativa</span>
+<h1 class="font-display-lg text-display-lg uppercase mb-4">PLANIFICACIÓN</h1>
+<p class="font-body-lg text-on-surface-variant max-w-xl">Predictibilidad, colaboración y control a través de metodologías Lean y herramientas digitales de última generación.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Progress Column -->
+<div class="lg:col-span-4 space-y-stack-sm" id="planning-steps">
+<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-tertiary-fixed active transition-all" onclick="showPlanningStage(0)">
+<span class="font-label-sm text-tertiary-fixed mb-1 block">ETAPA 01</span>
+<span class="font-headline-md">Planificación Tradicional</span>
+</button>
+<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-transparent hover:border-white/20 transition-all" onclick="showPlanningStage(1)">
+<span class="font-label-sm text-on-surface-variant mb-1 block">ETAPA 02</span>
+<span class="font-headline-md">Look Ahead</span>
+</button>
+<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-transparent hover:border-white/20 transition-all" onclick="showPlanningStage(2)">
+<span class="font-label-sm text-on-surface-variant mb-1 block">ETAPA 03</span>
+<span class="font-headline-md">Constraint Management</span>
+</button>
+<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-transparent hover:border-white/20 transition-all" onclick="showPlanningStage(3)">
+<span class="font-label-sm text-on-surface-variant mb-1 block">ETAPA 04</span>
+<span class="font-headline-md">Last Planner System</span>
+</button>
+<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-transparent hover:border-white/20 transition-all" onclick="showPlanningStage(4)">
+<span class="font-label-sm text-on-surface-variant mb-1 block">ETAPA 05</span>
+<span class="font-headline-md">PPC Monitoring</span>
+</button>
+</div>
+<!-- Narrative Visual Content -->
+<div class="lg:col-span-8 relative min-h-[600px] glass-card overflow-hidden group">
+<img alt="Planning Visual" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-[2000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHq-49FBC_EdjnzOIviNUiqkm82nqDM7cHS-U_bjkaoiF8394R0mZcKSg3kUTUnQBAdj01NI1eTCnC0s0l_yhQqxMNjvlHTV-gsJjqvYi7lDzgBmOb-pc12EakUHBv85SVChm_ffxasm_KTwGOcocHedxoxIBv_M_tob8VEmSGMAfZjVlIC7sOeee9a5Ko3PgAZPIF4ATvu0r7zYutkgGuDw5uAT6COfP1TWR_LkgFg7QGhI_ukzYsN1_RtnuNSISnuqryEjok1eUK"/>
+<div class="relative z-10 p-stack-xl h-full flex flex-col justify-center">
+<div class="reveal-stage active" id="stage-content-0">
+<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
+<h2 class="font-display-lg text-headline-lg uppercase mb-4">Planificación Maestro</h2>
+<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">El punto de partida: hitos estratégicos y cronogramas de alto nivel que definen la ruta crítica del proyecto.</p>
+<div class="flex gap-stack-md">
+<div class="glass-card px-4 py-2 rounded">
+<span class="font-label-sm block text-[10px]">ALCANCE</span>
+<span class="font-body-md">100% Contractual</span>
+</div>
+<div class="glass-card px-4 py-2 rounded">
+<span class="font-label-sm block text-[10px]">HERRAMIENTA</span>
+<span class="font-body-md">P6 / MS Project</span>
+</div>
+</div>
+</div>
+<div class="reveal-stage hidden" id="stage-content-1">
+<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
+<h2 class="font-display-lg text-headline-lg uppercase mb-4">Look Ahead (6 Semanas)</h2>
+<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">Mirada de mediano plazo para identificar requerimientos y asegurar el flujo continuo de producción.</p>
+<ul class="space-y-2 font-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary-fixed scale-75">check_circle</span> Definición de cuadrillas</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary-fixed scale-75">check_circle</span> Liberación de frentes</li>
+</ul>
+</div>
+<div class="reveal-stage hidden" id="stage-content-2">
+<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
+<h2 class="font-display-lg text-headline-lg uppercase mb-4">Gestión de Restricciones</h2>
+<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">Identificación proactiva de cuellos de botella técnicos, logísticos o administrativos antes de que afecten el campo.</p>
+<div class="mt-4 p-4 border border-dashed border-outline/30 rounded">
+<span class="font-label-sm text-tertiary-fixed uppercase">KPI: Ready-to-Start Rate</span>
+</div>
+</div>
+<div class="reveal-stage hidden" id="stage-content-3">
+<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
+<h2 class="font-display-lg text-headline-lg uppercase mb-4">Last Planner System</h2>
+<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">Compromisos semanales colaborativos. Quienes ejecutan el trabajo son quienes lo planifican en detalle.</p>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="p-4 bg-white/5 rounded">
+<span class="material-symbols-outlined mb-2">groups</span>
+<p class="font-label-sm">Sesiones Pull</p>
+</div>
+<div class="p-4 bg-white/5 rounded">
+<span class="material-symbols-outlined mb-2">dashboard_customize</span>
+<p class="font-label-sm">Tableros Kanban</p>
+</div>
+</div>
+</div>
+<div class="reveal-stage hidden" id="stage-content-4">
+<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
+<h2 class="font-display-lg text-headline-lg uppercase mb-4">Production Analytics (PPC)</h2>
+<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">Análisis de Porcentaje de Plan Cumplido y causas de no cumplimiento para alimentar el ciclo de mejora continua.</p>
+<div class="h-2 w-full bg-white/10 rounded-full mt-6 overflow-hidden">
+<div class="h-full bg-tertiary-fixed w-[85%] animate-[grow_2s_ease-out]"></div>
+</div>
+<span class="font-label-sm mt-2 block">PPC ACTUAL: 85% (Sector A)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Narrative Timeline (Decorative) -->
+<div class="fixed right-margin-desktop top-1/2 -translate-y-1/2 flex flex-col items-center gap-stack-sm pointer-events-none z-30 hidden lg:flex">
+<div class="w-[1px] h-20 bg-white/20"></div>
+<div class="w-2 h-2 bg-tertiary-fixed shadow-[0_0_10px_#ccf144]"></div>
+<div class="w-[1px] h-20 bg-white/20"></div>
+<div class="w-2 h-2 bg-white/20"></div>
+<div class="w-[1px] h-20 bg-white/20"></div>
+</div>
 <script>
-        // Particle System
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5;
-                this.speedX = (Math.random() - 0.5) * 0.2;
-                this.speedY = (Math.random() - 0.5) * 0.2;
-                this.opacity = Math.random() * 0.5 + 0.1;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                    this.reset();
-                }
-            }
-            draw() {
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        for (let i = 0; i < 150; i++) {
-            particles.push(new Particle());
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
-
-        // Intersection Observer for Entrance Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // Parallax and Header Effects
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-
-            // Hero Parallax (Scale & Translation)
-            const heroParallax = document.getElementById('hero-parallax');
-            if (heroParallax) {
-                const img = heroParallax.querySelector('img');
-                const scale = 1.1 + (scrolled * 0.0002);
-                const yPos = scrolled * 0.35;
-                img.style.transform = `scale(${scale}) translateY(${yPos}px)`;
-            }
-
-            // Nav transparency shift
-            const nav = document.getElementById('nav-shell');
-            if (scrolled > 50) {
-                nav.style.backgroundColor = 'rgba(17, 20, 21, 0.85)';
-                nav.style.borderColor = 'rgba(0, 220, 229, 0.2)';
-            } else {
-                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                nav.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-            }
+        // Custom Cursor Interaction
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
         });
 
-        // Trigger initial reveal for items in viewport
-        window.dispatchEvent(new Event('scroll'));
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+                cursor.style.backgroundColor = 'rgba(204, 241, 68, 0.2)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // Planning Stage Interaction
+        function showPlanningStage(index) {
+            // Update Buttons
+            const btns = document.querySelectorAll('.planning-btn');
+            btns.forEach((btn, i) => {
+                if(i === index) {
+                    btn.classList.add('border-tertiary-fixed');
+                    btn.classList.remove('border-transparent');
+                } else {
+                    btn.classList.remove('border-tertiary-fixed');
+                    btn.classList.add('border-transparent');
+                }
+            });
+
+            // Update Content
+            const stages = document.querySelectorAll('.reveal-stage');
+            stages.forEach((stage, i) => {
+                if(i === index) {
+                    stage.classList.remove('hidden');
+                    setTimeout(() => stage.classList.add('active'), 50);
+                } else {
+                    stage.classList.add('hidden');
+                    stage.classList.remove('active');
+                }
+            });
+        }
+
+        // Simple Intersection Observer for scroll reveals
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body></html>
