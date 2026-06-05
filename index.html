@@ -1,65 +1,63 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "on-background": "#e5e2dd",
-                        "secondary-container": "#464a18",
-                        "on-secondary-container": "#b5b97c",
+                        "on-background": "#141311",
+                        "secondary-container": "#E7E9C1",
+                        "on-secondary-container": "#4B4F1D",
+                        "accent-active": "#A3C610",
                         "on-tertiary-fixed-variant": "#3d4c00",
-                        "on-secondary": "#2f3303",
-                        "secondary-fixed": "#e3e7a6",
-                        "surface-container-low": "#1c1c19",
-                        "on-surface": "#e5e2dd",
-                        "error-container": "#93000a",
-                        "primary-fixed-dim": "#c7c9a3",
+                        "on-secondary": "#141311",
+                        "secondary-fixed": "#4B4F1D",
+                        "surface-container-low": "#f8f8f7",
+                        "on-surface": "#141311",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#4B4F1D",
                         "on-tertiary-fixed": "#171e00",
-                        "on-primary-container": "#646747",
-                        "inverse-on-surface": "#31302d",
-                        "on-primary": "#303217",
-                        "on-tertiary": "#293500",
-                        "tertiary-container": "#ccf144",
-                        "secondary": "#c7cb8c",
-                        "error": "#ffb4ab",
+                        "on-primary-container": "#1b1d05",
+                        "inverse-on-surface": "#f8f8f7",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#4B4F1D",
+                        "secondary": "#4B4F1D",
+                        "error": "#ba1a1a",
                         "on-primary-fixed": "#1b1d05",
-                        "inverse-surface": "#e5e2dd",
-                        "surface-variant": "#353532",
-                        "tertiary-fixed-dim": "#b0d426",
-                        "primary-fixed": "#e3e5be",
-                        "tertiary": "#ffffff",
-                        "on-error": "#690005",
-                        "on-tertiary-container": "#586c00",
-                        "primary": "#ffffff",
-                        "surface-tint": "#c7c9a3",
-                        "primary-container": "#e3e5be",
-                        "surface-bright": "#3a3936",
-                        "secondary-fixed-dim": "#c7cb8c",
-                        "surface-container": "#20201d",
-                        "on-surface-variant": "#c8c7ba",
+                        "inverse-surface": "#141311",
+                        "surface-variant": "#e5e2dd",
+                        "tertiary-fixed-dim": "#4B4F1D",
+                        "primary-fixed": "#141311",
+                        "tertiary": "#141311",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffffff",
+                        "primary": "#141311",
+                        "surface-tint": "#4B4F1D",
+                        "primary-container": "#f1f2e0",
+                        "surface-bright": "#ffffff",
+                        "secondary-fixed-dim": "#4B4F1D",
+                        "surface-container": "#f1f1ef",
+                        "on-surface-variant": "#47473e",
                         "on-primary-fixed-variant": "#46492c",
                         "on-secondary-fixed-variant": "#464a18",
-                        "surface-container-lowest": "#0e0e0c",
+                        "surface-container-lowest": "#ffffff",
                         "on-secondary-fixed": "#1b1d00",
-                        "outline-variant": "#47473e",
-                        "on-error-container": "#ffdad6",
-                        "inverse-primary": "#5e6141",
-                        "surface-dim": "#141311",
-                        "surface": "#141311",
-                        "outline": "#929186",
-                        "tertiary-fixed": "#ccf144",
-                        "background": "#141311",
-                        "surface-container-highest": "#353532",
-                        "surface-container-high": "#2a2a27"
+                        "outline-variant": "#c8c7ba",
+                        "on-error-container": "#410002",
+                        "inverse-primary": "#c7c9a3",
+                        "surface-dim": "#e5e2dd",
+                        "surface": "#ffffff",
+                        "outline": "#78786b",
+                        "tertiary-fixed": "#4B4F1D",
+                        "background": "#ffffff",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface-container-high": "#ebeae5"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -103,355 +101,701 @@
     </script>
 <style>
         body {
-            background-color: #141311;
-            color: #e5e2dd;
+            background-color: #ffffff;
+            color: #141311;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        .glass-card {
-            background: rgba(28, 28, 25, 0.6);
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC9xLzIxizpUK-IEQGyiohnkCCR-vYJUazit2zqvD21aZz22MV3MWSoJlQbah6g4xVeMLknO1DjVdPLfelliZ8qLzWMqiHeVXeUtVjjqPFQCYZjTLsyhnuSuDsaIfCVe_N7n1mBCC0C63jUIHI6bwuqVCifS6sdScZpxnJ9R0EX3_fON4awvi2BZmRGlnoYzIuZOLHF21WONbMb11hoNg6QM9cD33suulaCOID7dTsVAw_kK7APM_NQJK4GHp2C8DsqmCPvY9QynHFH);
+            filter: contrast(150%) brightness(100%);
+        }
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid #E7E9C1;
         }
-        .data-flow-line {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: drawLine 3s forwards ease-in-out;
+        .shimmer-effect {
+            position: relative;
+            overflow: hidden;
         }
-        @keyframes drawLine {
-            to { stroke-dashoffset: 0; }
+        .shimmer-effect::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(163, 198, 16, 0) 0%, rgba(163, 198, 16, 0) 40%, rgba(163, 198, 16, 0.2) 50%, rgba(163, 198, 16, 0) 60%, rgba(163, 198, 16, 0) 100%);
+            transform: rotate(30deg);
+            animation: shimmer 4s infinite linear;
+            pointer-events: none;
         }
-        .pulse-node {
-            animation: pulseGlow 2s infinite ease-in-out;
-        }
-        @keyframes pulseGlow {
-            0%, 100% { filter: drop-shadow(0 0 5px rgba(204, 241, 68, 0.4)); }
-            50% { filter: drop-shadow(0 0 20px rgba(204, 241, 68, 0.8)); }
+        @keyframes shimmer {
+            0% { transform: translateX(-150%) rotate(30deg); }
+            100% { transform: translateX(150%) rotate(30deg); }
         }
         .reveal-stage {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(100px);
+            filter: blur(5px);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
         }
         .reveal-stage.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
+            filter: blur(0);
+            pointer-events: auto;
+            z-index: 20;
+        }
+        .reveal-stage:not(.active) {
+            transform: translateX(-100px);
         }
         .custom-cursor {
             width: 20px;
             height: 20px;
-            border: 1px solid #ccf144;
+            border: 1px solid #4B4F1D;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
             transition: transform 0.1s ease;
         }
+        .nav-section-btn {
+            border: 2px solid #E7E9C1;
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .nav-section-btn.active-nav-btn {
+            background: #4B4F1D;
+            border-color: #A3C610;
+        }
+        .nav-section-btn.active-nav-btn span {
+            color: #A3C610 !important;
+        }
     </style>
 </head>
-<body class="font-body-md">
-<div class="custom-cursor" id="cursor"></div>
-<!-- TopNavBar (Shared Component) -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-stack-sm bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_0_40px_rgba(163,198,16,0.15)]">
-<div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tighter">
-            AETHELGARD
-        </div>
-<div class="hidden md:flex gap-stack-lg items-center">
-<a class="font-headline-md text-headline-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Timeline</a>
-<a class="font-headline-md text-headline-md tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Analysis</a>
-<a class="font-headline-md text-headline-md tracking-widest uppercase text-primary border-b-2 border-primary pb-1" href="#">Strategy</a>
+<body class="font-body-md" style="background: #ffffff; color: #141311;">
+<div class="custom-cursor" id="cursor" style="transform: scale(1); background-color: transparent; border-color: rgb(75, 79, 29); left: 31px; top: 516px;"></div>
+
+<!-- BARRA DE NAVEGACIÓN LATERAL IZQUIERDA -->
+<div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-40 flex flex-col items-center justify-center gap-4 px-4 py-8 hidden md:flex">
+  <button class="nav-section-btn w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active-nav-btn group" onclick="scrollToSection('seccion-evolucion-bim', 0)" data-section="0">
+    <span class="material-symbols-outlined text-secondary group-hover:text-accent-active text-lg" data-icon="architecture">architecture</span>
+    <div class="absolute left-full ml-3 px-2 py-1 bg-secondary text-white rounded text-xs font-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">BIM</div>
+  </button>
+
+  <button class="nav-section-btn w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 group" onclick="scrollToSection('seccion-automatizacion', 1)" data-section="1">
+    <span class="material-symbols-outlined text-secondary group-hover:text-accent-active text-lg" data-icon="science">science</span>
+    <div class="absolute left-full ml-3 px-2 py-1 bg-secondary text-white rounded text-xs font-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">AUTOMATIZACIÓN</div>
+  </button>
+
+  <button class="nav-section-btn w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 group" onclick="scrollToSection('seccion-elemento-integrador', 2)" data-section="2">
+    <span class="material-symbols-outlined text-secondary group-hover:text-accent-active text-lg" data-icon="dashboard">dashboard</span>
+    <div class="absolute left-full ml-3 px-2 py-1 bg-secondary text-white rounded text-xs font-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">INTEGRACIÓN</div>
+  </button>
 </div>
-<div class="flex items-center gap-stack-md">
-<button class="bg-tertiary-fixed text-on-tertiary-fixed px-stack-md py-stack-xs rounded font-label-sm uppercase tracking-wider hover:bg-white transition-all cursor-none active:scale-95">
-                Contact Executive
-            </button>
-<span class="material-symbols-outlined text-primary text-3xl cursor-none" data-icon="account_circle">account_circle</span>
+
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-stack-sm bg-white/80 backdrop-blur-xl border-b border-black/5">
+<div class="flex items-center gap-2">
+
 </div>
 </nav>
-<!-- SideNavBar (Shared Component) -->
-<aside class="fixed left-0 top-0 h-full flex flex-col items-center justify-center gap-stack-md z-40 bg-surface-container-low/40 backdrop-blur-2xl border-r border-white/5 w-20">
-<div class="flex flex-col gap-stack-lg items-center">
-<div class="group relative flex items-center justify-center">
-<div class="flex flex-col items-center gap-1">
-<div class="w-12 h-12 flex items-center justify-center rounded-full text-outline hover:text-primary transition-all hover:scale-125 duration-500 cursor-none">
-<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<main class="pt-20">
+<!-- SECCIÓN: TRANSFORMACIÓN DEL MODELADO DE INFORMACIÓN (BIM) -->
+<section class="min-h-screen relative flex flex-col justify-center items-center py-stack-xl px-margin-desktop overflow-hidden" id="seccion-evolucion-bim">
+<div class="w-full max-w-container-max">
+<div class="mb-stack-lg border-l-4 border-accent-active pl-6">
+<span class="font-label-sm text-secondary uppercase tracking-[0.3em] mb-2 block">01 / ELEMENTO TRANSFORMADOR</span>
+<h1 class="font-display-lg text-display-lg uppercase mb-4 text-secondary leading-none">PROCESOS BIM</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Transformación integral de la gestión de información en construcción a través de tres fases evolutivas orientadas a la eficiencia.</p>
 </div>
-<span class="font-label-sm text-[10px] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">PHASE 01</span>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Navegación de Fases -->
+<div class="lg:col-span-4 space-y-4 z-30" id="pasos-bim">
+<button class="bim-btn w-full text-left p-6 glass-card-light transition-all group active border-l-4 border-accent-active bg-secondary" onclick="showBimStage(0)">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-accent-active" data-icon="architecture">architecture</span>
+<span class="font-label-sm text-accent-active uppercase tracking-widest">FASE 01</span>
 </div>
+<span class="font-headline-md block text-white transition-transform group-hover:translate-x-1">Proceso Manual</span>
+<p class="font-body-md text-white/60 text-sm mt-2">Extracción tradicional de datos y planos físicos.</p>
+</button>
+<button class="bim-btn w-full text-left p-6 glass-card-light transition-all group border-l-4 border-transparent hover:border-accent-active/50" onclick="showBimStage(1)">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="construction">construction</span>
+<span class="font-label-sm text-secondary uppercase tracking-widest">FASE 02</span>
 </div>
-<div class="group relative flex items-center justify-center">
-<div class="flex flex-col items-center gap-1">
-<div class="w-12 h-12 flex items-center justify-center rounded-full text-outline hover:text-primary transition-all hover:scale-125 duration-500 cursor-none">
-<span class="material-symbols-outlined" data-icon="construction">construction</span>
+<span class="font-headline-md block text-secondary transition-transform group-hover:translate-x-1">Modelo BIM 3D</span>
+<p class="font-body-md text-on-surface-variant text-sm mt-2 opacity-60">Cuantificación paramétrica digital.</p>
+</button>
+<button class="bim-btn w-full text-left p-6 glass-card-light transition-all group border-l-4 border-transparent hover:border-accent-active/50" onclick="showBimStage(2)">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label-sm text-secondary uppercase tracking-widest">FASE 03</span>
 </div>
-<span class="font-label-sm text-[10px] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">PHASE 02</span>
+<span class="font-headline-md block text-secondary transition-transform group-hover:translate-x-1">Gemelo Digital y VDC</span>
+<p class="font-body-md text-on-surface-variant text-sm mt-2 opacity-60">Entorno de Datos Común (ACC).</p>
+</button>
 </div>
+<!-- Contenedor de Contenido Dinámico -->
+<div class="lg:col-span-8 relative min-h-[600px]">
+<!-- FASE 01: PROCESO MANUAL -->
+<div class="reveal-stage active" id="bim-content-0">
+<div class="glass-card-light h-full rounded-lg overflow-hidden flex flex-col">
+<div class="h-[500px] overflow-hidden bg-gradient-to-b from-accent-active/5 to-transparent flex items-center justify-center p-8">
+<img alt="Proceso Manual de Planos" class="max-w-full max-h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR7XyFd8zNvgtk4aRO2RJjn3ZckXDkyTusZNvwBAW8SaQWn1cN1nO4HIsIsnvlICOI_dn-JOiz9z2t0ca4sjGNNP328PtT_EaDu0SGqGykVF4xQMB1ZfqikSNJTTlbQi--n35CHCzstBDk7aDUq9tNngIl1urTcL48Ctq-4gC6oqvFwVtLOyIzWcGNUJcXFoqkM4RZKJQLQ-RgOk-ofbIctr-9FcKkHBaLTQZiEs4b4ZAZGmxzmLCudre-lvYic2llwFCtpSgb1iz1">
 </div>
-<div class="group relative flex items-center justify-center">
-<div class="flex flex-col items-center gap-1">
-<div class="bg-tertiary-fixed text-on-tertiary-fixed rounded-full scale-110 shadow-[0_0_15px_rgba(204,241,68,0.4)] w-12 h-12 flex items-center justify-center cursor-none">
-<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<div class="p-stack-lg flex-1">
+<div class="w-12 h-1 bg-secondary mb-6"></div>
+<h2 class="font-headline-lg uppercase mb-4 text-secondary">Obtención de cantidades manual</h2>
+<p class="font-body-lg text-on-surface mb-8">Obtención de cantidades de forma manual a partir de planos físicos con alto consumo de tiempos y riesgo crítico de errores en la entrada de datos.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container rounded border border-secondary/5 border-accent-active/20">
+<span class="font-label-sm block text-accent-active mb-1">RIESGO</span>
+<p class="text-sm text-on-surface">Errores de transcripción y omisiones</p>
 </div>
-<span class="font-label-sm text-[10px] uppercase tracking-tighter text-tertiary-fixed">PHASE 03</span>
-</div>
-</div>
-<div class="group relative flex items-center justify-center">
-<div class="flex flex-col items-center gap-1">
-<div class="w-12 h-12 flex items-center justify-center rounded-full text-outline hover:text-primary transition-all hover:scale-125 duration-500 cursor-none">
-<span class="material-symbols-outlined" data-icon="domain_verification">domain_verification</span>
-</div>
-<span class="font-label-sm text-[10px] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">PHASE 04</span>
-</div>
-</div>
-</div>
-</aside>
-<main class="ml-20">
-<!-- SECTION 5: PROCESS AUTOMATION -->
-<section class="min-h-screen relative flex flex-col justify-center items-center overflow-hidden pt-24 px-margin-desktop">
-<div class="absolute inset-0 z-0 opacity-20">
-<img alt="Automation Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIemVU2uoqITmxIDW3sN9dS7dEBNGprLGt-K2zGHWlSfsxYxrHTNErpKGOt7lCxeHkAzIb-YdxJTqYaj66IyKTj8gI4sM31L8VQTjEpiqV-9RTSn3Cu1kqaFPg_OG4RuSl1AzLwvtYBjtuJpBF6G9jZDBlh7d9DJxjsbkE8QMYk76OccQKHRcyh4nsSTK2TyF4uEudHt9xTNQN3I7qcCPrciNT8HiASt4Q6jmSTyPrXyGZzTOEbvFYRekmesJpUAxC-agF0IXt-Uq0"/>
-</div>
-<div class="relative z-10 w-full max-w-container-max">
-<div class="mb-stack-xl text-center">
-<span class="font-label-sm text-tertiary-fixed uppercase tracking-[0.3em] mb-4 block">05 / Ecosistema Digital</span>
-<h1 class="font-display-lg text-display-lg uppercase mb-4">AUTOMATIZACIÓN DE PROCESOS</h1>
-<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Reduciendo tareas manuales y acelerando la toma de decisiones mediante flujos de datos inteligentes y analítica avanzada.</p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
-<!-- Central Node Visualization -->
-<div class="relative h-[500px] flex items-center justify-center" id="automation-viz">
-<!-- SVG Connections -->
-<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 500 500">
-<path class="data-flow-line" d="M250,250 L100,100" fill="none" id="path-1" stroke="#ccf144" stroke-width="1"></path>
-<path class="data-flow-line" d="M250,250 L400,100" fill="none" id="path-2" stroke="#ccf144" stroke-width="1"></path>
-<path class="data-flow-line" d="M250,250 L100,400" fill="none" id="path-3" stroke="#ccf144" stroke-width="1"></path>
-<path class="data-flow-line" d="M250,250 L400,400" fill="none" id="path-4" stroke="#ccf144" stroke-width="1"></path>
-<path class="data-flow-line" d="M250,250 L250,50" fill="none" id="path-5" stroke="#ccf144" stroke-width="1"></path>
-<!-- Moving Light Paths -->
-<circle fill="#ffffff" r="3">
-<animatemotion dur="3s" path="M250,250 L100,100" repeatcount="indefinite"></animatemotion>
-</circle>
-<circle fill="#ffffff" r="3">
-<animatemotion dur="2.5s" path="M250,250 L400,100" repeatcount="indefinite"></animatemotion>
-</circle>
-<circle fill="#ffffff" r="3">
-<animatemotion dur="4s" path="M250,250 L100,400" repeatcount="indefinite"></animatemotion>
-</circle>
-</svg>
-<!-- Nodes -->
-<div class="absolute z-20 flex flex-col items-center">
-<div class="w-32 h-32 rounded-full glass-card flex items-center justify-center border-2 border-tertiary-fixed pulse-node">
-<span class="font-label-sm text-center px-2 leading-tight">GERENCIA DE CONSTRUCCIÓN</span>
+<div class="p-4 bg-surface-container rounded border border-secondary/5 border-accent-active/20">
+<span class="font-label-sm block text-accent-active mb-1">IMPACTO</span>
+<p class="text-sm text-on-surface">Alto consumo de horas-hombre ineficientes</p>
 </div>
 </div>
-<!-- Connected Apps -->
-<div class="absolute top-[80px] left-[80px] glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
-<span class="material-symbols-outlined text-tertiary-fixed" data-icon="bar_chart">bar_chart</span>
-<span class="font-label-sm text-[10px]">POWER BI</span>
-</div>
-<div class="absolute top-[80px] right-[80px] glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
-<span class="material-symbols-outlined text-tertiary-fixed" data-icon="cloud_sync">cloud_sync</span>
-<span class="font-label-sm text-[10px]">SHAREPOINT</span>
-</div>
-<div class="absolute bottom-[80px] left-[80px] glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
-<span class="material-symbols-outlined text-tertiary-fixed" data-icon="code">code</span>
-<span class="font-label-sm text-[10px]">GITHUB</span>
-</div>
-<div class="absolute bottom-[80px] right-[80px] glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
-<span class="material-symbols-outlined text-tertiary-fixed" data-icon="bolt">bolt</span>
-<span class="font-label-sm text-[10px]">AUTOMATE</span>
-</div>
-<div class="absolute top-0 glass-card p-4 rounded-xl flex flex-col items-center gap-1 transform transition-transform hover:scale-110">
-<span class="material-symbols-outlined text-tertiary-fixed" data-icon="psychology">psychology</span>
-<span class="font-label-sm text-[10px]">AI ENGINE</span>
 </div>
 </div>
-<!-- Case Studies -->
-<div class="space-y-stack-md">
-<div class="glass-card p-stack-lg border-l-4 border-tertiary-fixed">
-<h3 class="font-headline-md text-headline-md mb-2">Automated Reporting</h3>
-<p class="text-on-surface-variant font-body-md mb-4">Consolidación en tiempo real de reportes diarios de obra, eliminando 15 horas semanales de carga administrativa por proyecto.</p>
-<div class="flex items-center gap-2">
-<span class="bg-secondary-container text-on-secondary-container text-xs px-2 py-1 rounded">Solución: PowerApps + SQL</span>
-<span class="text-tertiary-fixed font-label-sm">+25% Eficiencia</span>
+</div>
+<!-- FASE 02: MODELO BIM 3D -->
+<div class="reveal-stage" id="bim-content-1">
+<div class="glass-card-light h-full rounded-lg overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Modelo BIM 3D Paramétrico" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP4zls8RGmmXFHBCMB1q20DPYkar7JqDAxvQvUVB7QNPASNtc47yp3TuU5Sewqf7pDUdevF7XgpETCwIADl9h-5Kwd6skNQa18K2qbL47wTCV-WKZ8M-OblHNRdYCngwitjIYGKB3sCFuCui_SWHjVlgub7HWf4S7zc3WjZpoYdDx2j5Isr-6iaS7XNCNPA2v6rL2TxbH7SL6mMxHRWGu7SXF2UzS5ur2eeTy547dyKU5fp9i-viv7lWfHbUthEF0DLJXmRhj4LQFO">
+</div>
+<div class="p-stack-lg flex-1">
+<div class="w-12 h-1 bg-accent-active mb-6"></div>
+<h2 class="font-headline-lg uppercase mb-4 text-secondary">Modelado BIM Paramétrico</h2>
+<p class="font-body-lg text-on-surface mb-6">Modelado con parámetros inteligentes en 3D. Implementación de un Tablero de cuantificación integrado para la obtención de cantidades.</p>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active text-lg" data-icon="check_circle">check_circle</span>
+Soporte exacto de cantidades para contratos
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active text-lg" data-icon="check_circle">check_circle</span>
+Reducción drástica de tiempos de revisión
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active text-lg" data-icon="check_circle">check_circle</span>
+Eliminación de procesos de control redundantes
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active text-lg" data-icon="check_circle">check_circle</span>
+Confiabilidad técnica de procesos garantizada
+</li>
+</ul>
+<div class="mt-8">
+<div class="inline-block px-4 py-2 bg-accent-active/10 border border-accent-active/30 rounded text-accent-active font-label-sm">
+TABLERO DE CUANTIFICACIÓN
 </div>
 </div>
-<div class="glass-card p-stack-lg border-l-4 border-outline">
-<h3 class="font-headline-md text-headline-md mb-2">Data Consolidation</h3>
-<p class="text-on-surface-variant font-body-md mb-4">Unificación de fuentes heterogéneas (ERP, CRM, BIM) en un Data Lake centralizado para analítica predictiva.</p>
-<div class="flex items-center gap-2">
-<span class="bg-surface-container-highest text-on-surface text-xs px-2 py-1 rounded">Solución: Azure Data Factory</span>
-<span class="text-on-surface-variant font-label-sm">Integridad 99.9%</span>
+</div>
+</div>
+</div>
+<!-- FASE 03: GEMELO DIGITAL Y VDC -->
+<div class="reveal-stage" id="bim-content-2">
+<div class="glass-card-light h-full rounded-lg overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Gemelo Digital y VDC" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATfbvkzWVputwlGZdFyBvBq2E42KF_ImOWwt0D9xSSW3fSYKHBkUx4a8-6Yg-ZtCTSr8VqDqLqGdfyTSHy5IyBdFylDK8UGT-XHSWSmZJq1WQHJafwIls2OPbVYDjdiZ1Q6WM1zDSIMYqojSWY5IuA6sYMWJVrm1K64Ob96sRauKq6WiT7S_BzTq-kgV0HV1TqcxzBXnHoFTnb5mMcu7_O6e2rdCd_qae0RF6vwjwCzJyoBFXajEjKhKjNm_xLta7BBqLY1Ci94FIJ">
+</div>
+<div class="p-stack-lg flex-1">
+<div class="w-12 h-1 bg-accent-active shimmer-effect mb-6"></div>
+<h2 class="font-headline-lg uppercase mb-4 text-secondary">Construir antes de construir</h2>
+<p class="font-body-lg text-on-surface mb-6">Modelo enfocado a un Entorno de Datos Común (ACC-VEXEL) con parametrización avanzada para procesos transversales de presupuesto, contratación, compras.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="font-label-sm text-accent-active border-b border-accent-active/20 pb-2 uppercase tracking-widest">IMPLEMENTACIÓN</h4>
+<ul class="space-y-3 text-sm">
+<li class="flex gap-2">
+<span class="text-accent-active font-bold">01.</span>
+<span class="text-on-surface">Codificación técnica de Mano de obra y Materiales</span>
+</li>
+<li class="flex gap-2">
+<span class="text-accent-active font-bold">02.</span>
+<span class="text-on-surface">Planificación y cuantificación parametrizada avanzada</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-sm text-secondary border-b border-secondary/10 pb-2 uppercase tracking-widest">PLAN DE RUTA EVOLUTIVO</h4>
+<div class="space-y-3 text-[10px] font-label-sm">
+<div class="flex items-center gap-3">
+<span class="text-on-surface-variant w-28">PRECONSTRUCCIÓN</span>
+<div class="h-1.5 flex-1 bg-black/5 rounded-full overflow-hidden">
+<div class="h-full bg-accent-active w-full"></div>
+</div>
+<span class="text-accent-active">EJECUTADO</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface-variant w-28">PILOTO (ACC)</span>
+<div class="h-1.5 flex-1 bg-black/5 rounded-full overflow-hidden">
+<div class="h-full bg-accent-active/40 w-1/2"></div>
+</div>
+<span class="opacity-60">EN CURSO</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface-variant w-28">EVOLUCIÓN (VDC)</span>
+<div class="h-1.5 flex-1 bg-black/5 rounded-full"></div>
+<span class="opacity-40">PRÓXIMO</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-secondary/5 flex justify-between items-center">
+<p class="font-body-md italic text-on-surface-variant text-xs">"Gestión Integral BIM con Entorno de Datos Común (ACC) y Evolución hacia VDC"</p>
+<div class="px-3 py-1 bg-secondary text-accent-active rounded-full font-label-sm text-[9px] tracking-widest">PRÓXIMA GENERACIÓN</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- SECTION 6: PLANNING -->
-<section class="min-h-screen relative flex flex-col justify-center items-center py-stack-xl px-margin-desktop bg-surface-container-lowest">
+<!-- SECCIÓN: ECOSISTEMA DIGITAL - AUTOMATIZACIÓN DE PROCESOS -->
+<section class="min-h-screen relative flex flex-col justify-center items-center py-stack-xl px-margin-desktop overflow-hidden bg-surface-container-lowest border-t border-secondary/5" id="seccion-automatizacion">
 <div class="w-full max-w-container-max">
-<div class="mb-stack-xl">
-<span class="font-label-sm text-tertiary-fixed uppercase tracking-[0.3em] mb-4 block">06 / Excelencia Operativa</span>
-<h1 class="font-display-lg text-display-lg uppercase mb-4">PLANIFICACIÓN</h1>
-<p class="font-body-lg text-on-surface-variant max-w-xl">Predictibilidad, colaboración y control a través de metodologías Lean y herramientas digitales de última generación.</p>
+<div class="mb-stack-lg border-l-4 border-accent-active pl-6">
+<span class="font-label-sm text-secondary uppercase tracking-[0.3em] mb-2 block">02 / ELEMENTO TRANSFORMADOR</span>
+<h1 class="font-display-lg text-display-lg uppercase mb-4 text-secondary leading-none">AUTOMATIZACIÓN DE PROCESOS</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Sistemas inteligentes que automatizan flujos críticos: monitoreo de resistencia de concretos en tiempo real, control normativo, y facturación-almacén integrada sin intervención manual.</p>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
-<!-- Progress Column -->
-<div class="lg:col-span-4 space-y-stack-sm" id="planning-steps">
-<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-tertiary-fixed active transition-all" onclick="showPlanningStage(0)">
-<span class="font-label-sm text-tertiary-fixed mb-1 block">ETAPA 01</span>
-<span class="font-headline-md">Planificación Tradicional</span>
+
+<!-- Pestañas/Botones -->
+<div class="flex gap-4 mb-stack-lg overflow-x-auto pb-4 border-b border-secondary/10" id="auto-tabs">
+<button class="auto-tab flex items-center gap-2 px-6 py-3 rounded-lg glass-card-light transition-all active border-b-2 border-accent-active bg-secondary text-white" onclick="showAutoTab(0)">
+<span class="material-symbols-outlined text-accent-active" data-icon="science">science</span>
+<span class="font-label-sm uppercase tracking-wider">Resistencia Concreto</span>
 </button>
-<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-transparent hover:border-white/20 transition-all" onclick="showPlanningStage(1)">
-<span class="font-label-sm text-on-surface-variant mb-1 block">ETAPA 02</span>
-<span class="font-headline-md">Look Ahead</span>
+<button class="auto-tab flex items-center gap-2 px-6 py-3 rounded-lg glass-card-light transition-all border-b-2 border-transparent hover:border-accent-active/50 text-secondary" onclick="showAutoTab(1)">
+<span class="material-symbols-outlined text-secondary" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-sm uppercase tracking-wider">Remisiones Concreto</span>
 </button>
-<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-transparent hover:border-white/20 transition-all" onclick="showPlanningStage(2)">
-<span class="font-label-sm text-on-surface-variant mb-1 block">ETAPA 03</span>
-<span class="font-headline-md">Constraint Management</span>
-</button>
-<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-transparent hover:border-white/20 transition-all" onclick="showPlanningStage(3)">
-<span class="font-label-sm text-on-surface-variant mb-1 block">ETAPA 04</span>
-<span class="font-headline-md">Last Planner System</span>
-</button>
-<button class="planning-btn w-full text-left p-stack-md glass-card border-l-2 border-transparent hover:border-white/20 transition-all" onclick="showPlanningStage(4)">
-<span class="font-label-sm text-on-surface-variant mb-1 block">ETAPA 05</span>
-<span class="font-headline-md">PPC Monitoring</span>
+<button class="auto-tab flex items-center gap-2 px-6 py-3 rounded-lg glass-card-light transition-all border-b-2 border-transparent hover:border-accent-active/50 text-secondary" onclick="showAutoTab(2)">
+<span class="material-symbols-outlined text-secondary" data-icon="rule_folder">rule_folder</span>
+<span class="font-label-sm uppercase tracking-wider">SINCO Cortes</span>
 </button>
 </div>
-<!-- Narrative Visual Content -->
-<div class="lg:col-span-8 relative min-h-[600px] glass-card overflow-hidden group">
-<img alt="Planning Visual" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-[2000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHq-49FBC_EdjnzOIviNUiqkm82nqDM7cHS-U_bjkaoiF8394R0mZcKSg3kUTUnQBAdj01NI1eTCnC0s0l_yhQqxMNjvlHTV-gsJjqvYi7lDzgBmOb-pc12EakUHBv85SVChm_ffxasm_KTwGOcocHedxoxIBv_M_tob8VEmSGMAfZjVlIC7sOeee9a5Ko3PgAZPIF4ATvu0r7zYutkgGuDw5uAT6COfP1TWR_LkgFg7QGhI_ukzYsN1_RtnuNSISnuqryEjok1eUK"/>
-<div class="relative z-10 p-stack-xl h-full flex flex-col justify-center">
-<div class="reveal-stage active" id="stage-content-0">
-<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
-<h2 class="font-display-lg text-headline-lg uppercase mb-4">Planificación Maestro</h2>
-<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">El punto de partida: hitos estratégicos y cronogramas de alto nivel que definen la ruta crítica del proyecto.</p>
-<div class="flex gap-stack-md">
-<div class="glass-card px-4 py-2 rounded">
-<span class="font-label-sm block text-[10px]">ALCANCE</span>
-<span class="font-body-md">100% Contractual</span>
+
+<!-- Contenedor de Contenido -->
+<div class="relative min-h-96">
+<!-- Resistencia Concreto -->
+<div class="auto-content reveal-stage active" id="auto-content-0">
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-accent-active text-4xl" data-icon="science">science</span>
+<h2 class="font-headline-lg text-secondary">Resistencia Concreto</h2>
 </div>
-<div class="glass-card px-4 py-2 rounded">
-<span class="font-label-sm block text-[10px]">HERRAMIENTA</span>
-<span class="font-body-md">P6 / MS Project</span>
-</div>
-</div>
-</div>
-<div class="reveal-stage hidden" id="stage-content-1">
-<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
-<h2 class="font-display-lg text-headline-lg uppercase mb-4">Look Ahead (6 Semanas)</h2>
-<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">Mirada de mediano plazo para identificar requerimientos y asegurar el flujo continuo de producción.</p>
-<ul class="space-y-2 font-body-md text-on-surface-variant">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary-fixed scale-75">check_circle</span> Definición de cuadrillas</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary-fixed scale-75">check_circle</span> Liberación de frentes</li>
+<p class="font-body-lg text-on-surface mb-8">Automatización digital de datos resultado de pruebas de laboratorio de resistencia de concreto, que transforma la información para adecuarse a verificaciones normativas legales y la visualización/notificación por vía correo electrónico de incumplimientos normativos.</p>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container rounded border border-accent-active/20">
+<h3 class="font-label-sm text-accent-active uppercase tracking-wider mb-3">Aspectos Clave</h3>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Notificación de incumplimiento normativo</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Visualización de evolución histórica de resistencia de concretos en proyectos</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Eliminación de registros manuales locales por proyecto</span>
+</li>
 </ul>
 </div>
-<div class="reveal-stage hidden" id="stage-content-2">
-<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
-<h2 class="font-display-lg text-headline-lg uppercase mb-4">Gestión de Restricciones</h2>
-<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">Identificación proactiva de cuellos de botella técnicos, logísticos o administrativos antes de que afecten el campo.</p>
-<div class="mt-4 p-4 border border-dashed border-outline/30 rounded">
-<span class="font-label-sm text-tertiary-fixed uppercase">KPI: Ready-to-Start Rate</span>
-</div>
-</div>
-<div class="reveal-stage hidden" id="stage-content-3">
-<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
-<h2 class="font-display-lg text-headline-lg uppercase mb-4">Last Planner System</h2>
-<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">Compromisos semanales colaborativos. Quienes ejecutan el trabajo son quienes lo planifican en detalle.</p>
-<div class="grid grid-cols-2 gap-4 mt-6">
-<div class="p-4 bg-white/5 rounded">
-<span class="material-symbols-outlined mb-2">groups</span>
-<p class="font-label-sm">Sesiones Pull</p>
-</div>
-<div class="p-4 bg-white/5 rounded">
-<span class="material-symbols-outlined mb-2">dashboard_customize</span>
-<p class="font-label-sm">Tableros Kanban</p>
 </div>
 </div>
 </div>
-<div class="reveal-stage hidden" id="stage-content-4">
-<div class="w-16 h-1 bg-tertiary-fixed mb-stack-md"></div>
-<h2 class="font-display-lg text-headline-lg uppercase mb-4">Production Analytics (PPC)</h2>
-<p class="font-body-lg text-on-surface max-w-lg mb-stack-md">Análisis de Porcentaje de Plan Cumplido y causas de no cumplimiento para alimentar el ciclo de mejora continua.</p>
-<div class="h-2 w-full bg-white/10 rounded-full mt-6 overflow-hidden">
-<div class="h-full bg-tertiary-fixed w-[85%] animate-[grow_2s_ease-out]"></div>
+
+<!-- Remisiones de Concreto -->
+<div class="auto-content reveal-stage" id="auto-content-1">
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-accent-active text-4xl" data-icon="local_shipping">local_shipping</span>
+<h2 class="font-headline-lg text-secondary">Remisiones de Concreto</h2>
 </div>
-<span class="font-label-sm mt-2 block">PPC ACTUAL: 85% (Sector A)</span>
+<p class="text-sm text-accent-active font-label-sm mb-6">Res. Adm. Juan Plazas</p>
+<p class="font-body-lg text-on-surface mb-8">Automatización digital de remisiones de concreto que agiliza la recepción, distribución y almacenamiento, eliminando documentos físicos y mejorando la trazabilidad en tiempo real.</p>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container rounded border border-accent-active/20">
+<h3 class="font-label-sm text-accent-active uppercase tracking-wider mb-3">Aspectos Clave</h3>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Notificación automática a partes interesadas</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Registro oportuno para entradas de almacén y validación de facturación</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Mayor trazabilidad del concreto recibido y su ubicación en obra</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Disminución del archivo físico y la huella ambiental</span>
+</li>
+</ul>
 </div>
 </div>
+</div>
+</div>
+
+<!-- SINCO Automatización de Cortes -->
+<div class="auto-content reveal-stage" id="auto-content-2">
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-accent-active text-4xl" data-icon="rule_folder">rule_folder</span>
+<h2 class="font-headline-lg text-secondary">SINCO Automatización Cortes</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-8">Automatización digital del proceso de cortes de acta en el sistema SINCO. Flujo de aprobación integrado con residente administrativo, director de proyecto y validación técnica con residente técnico.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container rounded border border-accent-active/20">
+<div class="flex items-start gap-2 text-sm text-on-surface mb-2">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span class="font-semibold">Automatización digital de Excel a SINCO</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded border border-accent-active/20">
+<div class="flex items-start gap-2 text-sm text-on-surface mb-2">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span class="font-semibold">Flujo de aprobación automatizado multinivel</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded border border-accent-active/20">
+<div class="flex items-start gap-2 text-sm text-on-surface mb-2">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span class="font-semibold">Validación técnica residente ingeniero</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded border border-accent-active/20">
+<div class="flex items-start gap-2 text-sm text-on-surface mb-2">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span class="font-semibold">Trazabilidad completa de aprobaciones</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SECCIÓN: ELEMENTO INTEGRADOR PLANIFICACIÓN -->
+<section class="min-h-screen relative flex flex-col justify-center items-center py-stack-xl px-margin-desktop overflow-hidden bg-surface-container-lowest border-t border-secondary/5" id="seccion-elemento-integrador">
+<div class="w-full max-w-container-max flex flex-col h-full">
+<div class="sticky top-0 z-20 mb-stack-lg border-l-4 border-accent-active pl-6 bg-surface-container-lowest pb-stack-lg">
+<span class="font-label-sm text-secondary uppercase tracking-[0.3em] mb-2 block">03 / ELEMENTO TRANSFORMADOR</span>
+<h1 class="font-display-lg text-display-lg uppercase mb-4 text-secondary leading-none">ELEMENTO INTEGRADOR PLANIFICACIÓN</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Orquestación de sistemas y procesos para alineación estructural de presupuesto, programación, contratación y ejecución bajo modelo VDC.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter overflow-y-auto pr-4">
+<!-- Pedido SINCO para Planificación -->
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent-active text-3xl" data-icon="shopping_cart">shopping_cart</span>
+<h2 class="font-headline-lg text-secondary">Pedido SINCO Planificación</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-4">Módulo de pedidos integrado en SINCO que permite planificación predictiva de materiales, recursos y cronograma de entregas alineado con el modelo BIM y plan VDC.</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Pedidos automáticos basados en modelado paramétrico</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Visibilidad de cadena de suministro</span>
+</li>
+</ul>
+</div>
+
+<!-- Célula con proyectos, Construcción / AEG -->
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent-active text-3xl" data-icon="groups">groups</span>
+<h2 class="font-headline-lg text-secondary">Célula con proyectos, Construcción / AEG</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-4">Célula transversal de Proyectos, Construcción y AEG dedicada a estandarizar manuales de entrega de propietario y Zona Comunes.</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Manuales de propietarios normalizados</span>
+</li>
+</ul>
+</div>
+
+<!-- BIM-SINCO Integración Estructural -->
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent-active text-3xl" data-icon="link">link</span>
+<h2 class="font-headline-lg text-secondary">BIM-SINCO Integración</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-4">Integración bidireccional BIM-SINCO alineando estructura de presupuesto, contratación y pagos.</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Alineación estructura presupuesto-BIM</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Trazabilidad integrada contratos-pagos</span>
+</li>
+</ul>
+</div>
+
+<!-- Control Asentamientos -->
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent-active text-3xl" data-icon="monitoring">monitoring</span>
+<h2 class="font-headline-lg text-secondary">Control Asentamientos</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-4">Sistema de obtención de datos de informes de asentamiento, con visualización de histórico de comportamiento.</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Trazabilidad histórica de asentamientos y alertas</span>
+</li>
+</ul>
+</div>
+
+<!-- Topografía y Gemelos Digitales -->
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent-active text-3xl" data-icon="landscape">landscape</span>
+<h2 class="font-headline-lg text-secondary">Topografía y Ortofotogrametría</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-4">Vinculación de datos topográficos y nubes de puntos con gemelos digitales mediante ortofotogrametría de drones para validación constructiva en tiempo real.</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Captura aérea con drones georeferenciada</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Comparativa digital vs. planeado</span>
+</li>
+</ul>
+</div>
+
+<!-- Optimización Flujos de Inversión -->
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent-active text-3xl" data-icon="trending_up">trending_up</span>
+<h2 class="font-headline-lg text-secondary">Optimización Flujos Inversión</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-4">Modelo predictivo que optimiza flujos de inversión, alineando presupuesto, programación y proyección financiera bajo escenarios predictivos y análisis de restricciones.</p>
+</div>
+
+<!-- Tipificación Mezclas Concreto -->
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent-active text-3xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h2 class="font-headline-lg text-secondary">Tipificación Mezclas Concreto</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-4">Catálogo digitalizado de mezclas de concreto pre-tipificadas con proveedores ARGOS, CEMEX y HOLCIM, integrado a especificaciones de proyecto.</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Base de datos mezclas tipificadas</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Integración proveedores principales</span>
+</li>
+</ul>
+</div>
+
+<!-- Actas CAPRCS y Soporte Técnico -->
+<div class="glass-card-light p-stack-lg rounded-lg border border-accent-active/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent-active text-3xl" data-icon="description">description</span>
+<h2 class="font-headline-lg text-secondary">Actas CAPRCS Agente Soporte</h2>
+</div>
+<p class="font-body-lg text-on-surface mb-4">Agente inteligente de soporte para actas CAPRCS que centraliza definiciones técnicas dictadas y genera trazabilidad de decisiones constructivas.</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Base de criterios técnicos CAPRCS</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-on-surface">
+<span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
+<span>Trazabilidad de decisiones técnicas</span>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </section>
 </main>
-<!-- Narrative Timeline (Decorative) -->
-<div class="fixed right-margin-desktop top-1/2 -translate-y-1/2 flex flex-col items-center gap-stack-sm pointer-events-none z-30 hidden lg:flex">
-<div class="w-[1px] h-20 bg-white/20"></div>
-<div class="w-2 h-2 bg-tertiary-fixed shadow-[0_0_10px_#ccf144]"></div>
-<div class="w-[1px] h-20 bg-white/20"></div>
-<div class="w-2 h-2 bg-white/20"></div>
-<div class="w-[1px] h-20 bg-white/20"></div>
-</div>
 <script>
-        // Custom Cursor Interaction
-        const cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+    // Interacción del Cursor Personalizado
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(1.5)';
+            cursor.style.backgroundColor = 'rgba(163, 198, 16, 0.15)';
+            cursor.style.borderColor = '#A3C610';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'scale(1)';
+            cursor.style.backgroundColor = 'transparent';
+            cursor.style.borderColor = '#4B4F1D';
+        });
+    });
+
+    // Interacción de Fases BIM
+    function showBimStage(index) {
+        const btns = document.querySelectorAll('.bim-btn');
+        btns.forEach((btn, i) => {
+            if(i === index) {
+                btn.classList.add('border-accent-active', 'bg-secondary');
+                btn.classList.remove('border-transparent', 'hover:border-accent-active/50');
+
+                const title = btn.querySelector('.font-headline-md');
+                const label = btn.querySelector('.font-label-sm');
+                const desc = btn.querySelector('p');
+                const icon = btn.querySelector('.material-symbols-outlined');
+
+                title.classList.replace('text-secondary', 'text-white');
+                if(label) label.classList.replace('text-secondary', 'text-accent-active');
+                if(desc) desc.classList.replace('text-on-surface-variant', 'text-white/60');
+                if(icon) icon.classList.replace('text-secondary', 'text-accent-active');
+            } else {
+                btn.classList.remove('border-accent-active', 'bg-secondary');
+                btn.classList.add('border-transparent', 'hover:border-accent-active/50');
+
+                const title = btn.querySelector('.font-headline-md');
+                const label = btn.querySelector('.font-label-sm');
+                const desc = btn.querySelector('p');
+                const icon = btn.querySelector('.material-symbols-outlined');
+
+                title.classList.replace('text-white', 'text-secondary');
+                if(label) label.classList.replace('text-accent-active', 'text-secondary');
+                if(desc) desc.classList.replace('text-white/60', 'text-on-surface-variant');
+                if(icon) icon.classList.replace('text-accent-active', 'text-secondary');
+            }
         });
 
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(2)';
-                cursor.style.backgroundColor = 'rgba(204, 241, 68, 0.2)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursor.style.backgroundColor = 'transparent';
-            });
+        const stages = document.querySelectorAll('#seccion-evolucion-bim .reveal-stage');
+        stages.forEach((stage, i) => {
+            stage.classList.remove('active');
+            if(i === index) {
+                stage.classList.add('active');
+            }
+        });
+    }
+
+    // Interacción de Pestañas de Automatización
+    function showAutoTab(index) {
+        const tabs = document.querySelectorAll('.auto-tab');
+        const contents = document.querySelectorAll('.auto-content');
+
+        tabs.forEach((tab, i) => {
+            if(i === index) {
+                tab.classList.add('bg-secondary', 'text-white', 'border-accent-active');
+                tab.classList.remove('text-secondary', 'border-transparent', 'hover:border-accent-active/50');
+
+                const icon = tab.querySelector('.material-symbols-outlined');
+                if(icon) icon.classList.replace('text-secondary', 'text-accent-active');
+            } else {
+                tab.classList.remove('bg-secondary', 'text-white', 'border-accent-active');
+                tab.classList.add('text-secondary', 'border-transparent', 'hover:border-accent-active/50');
+
+                const icon = tab.querySelector('.material-symbols-outlined');
+                if(icon) icon.classList.replace('text-accent-active', 'text-secondary');
+            }
         });
 
-        // Planning Stage Interaction
-        function showPlanningStage(index) {
-            // Update Buttons
-            const btns = document.querySelectorAll('.planning-btn');
-            btns.forEach((btn, i) => {
-                if(i === index) {
-                    btn.classList.add('border-tertiary-fixed');
-                    btn.classList.remove('border-transparent');
-                } else {
-                    btn.classList.remove('border-tertiary-fixed');
-                    btn.classList.add('border-transparent');
-                }
-            });
+        contents.forEach((content, i) => {
+            if(i === index) {
+                content.classList.add('active');
+            } else {
+                content.classList.remove('active');
+            }
+        });
+    }
 
-            // Update Content
-            const stages = document.querySelectorAll('.reveal-stage');
-            stages.forEach((stage, i) => {
-                if(i === index) {
-                    stage.classList.remove('hidden');
-                    setTimeout(() => stage.classList.add('active'), 50);
-                } else {
-                    stage.classList.add('hidden');
-                    stage.classList.remove('active');
-                }
-            });
+    // Inicializar primera fase
+    window.addEventListener('DOMContentLoaded', () => {
+        showBimStage(0);
+        updateActiveNavButton();
+    });
+
+    // Función para navegar a una sección
+    function scrollToSection(sectionId, index) {
+        const section = document.getElementById(sectionId);
+        if(section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            updateActiveNavButton(index);
+        }
+    }
+
+    // Actualizar botón activo según scroll
+    function updateActiveNavButton(forceIndex = null) {
+        const navBtns = document.querySelectorAll('.nav-section-btn');
+
+        if(forceIndex !== null) {
+            navBtns.forEach(btn => btn.classList.remove('active-nav-btn'));
+            navBtns[forceIndex].classList.add('active-nav-btn');
+            return;
         }
 
-        // Simple Intersection Observer for scroll reveals
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100');
-                    entry.target.classList.remove('opacity-0');
-                }
-            });
-        }, { threshold: 0.1 });
+        const sections = [
+            { id: 'seccion-evolucion-bim', index: 0 },
+            { id: 'seccion-automatizacion', index: 1 },
+            { id: 'seccion-elemento-integrador', index: 2 }
+        ];
 
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
+        let currentSection = 0;
+        for(let section of sections) {
+            const el = document.getElementById(section.id);
+            if(el) {
+                const rect = el.getBoundingClientRect();
+                if(rect.top <= window.innerHeight / 2) {
+                    currentSection = section.index;
+                }
+            }
+        }
+
+        navBtns.forEach((btn, i) => {
+            btn.classList.remove('active-nav-btn');
+            if(i === currentSection) {
+                btn.classList.add('active-nav-btn');
+            }
         });
-    </script>
+    }
+
+    // Escuchar scroll para actualizar el botón activo
+    window.addEventListener('scroll', () => {
+        updateActiveNavButton();
+    });
+</script>
+
 </body></html>
