@@ -262,52 +262,85 @@
     </div>
 
     <!-- CENTRAL NODE VISUALIZATION - 3 NODES -->
-    <div class="relative h-[500px] flex items-center justify-center mt-stack-lg" id="transformation-viz">
+    <div class="relative h-[600px] flex items-center justify-center mt-stack-lg" id="transformation-viz">
       <!-- SVG Connections -->
-      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 500">
+      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 600 600">
         <!-- Connection Lines -->
-        <path class="data-flow-line" d="M250,250 L100,150" fill="none" stroke="#A3C610" stroke-width="1"></path>
-        <path class="data-flow-line" d="M250,250 L400,150" fill="none" stroke="#A3C610" stroke-width="1"></path>
-        <path class="data-flow-line" d="M250,250 L250,400" fill="none" stroke="#A3C610" stroke-width="1"></path>
+        <path class="data-flow-line" d="M300,300 L120,140" fill="none" stroke="#A3C610" stroke-width="2"></path>
+        <path class="data-flow-line" d="M300,300 L480,140" fill="none" stroke="#A3C610" stroke-width="2"></path>
+        <path class="data-flow-line" d="M300,300 L300,480" fill="none" stroke="#A3C610" stroke-width="2"></path>
 
         <!-- Moving Light Paths -->
-        <circle fill="#ffffff" r="3">
-          <animateMotion dur="3s" path="M250,250 L100,150" repeatCount="indefinite"></animateMotion>
+        <circle fill="#ffffff" r="4">
+          <animateMotion dur="3s" path="M300,300 L120,140" repeatCount="indefinite"></animateMotion>
         </circle>
-        <circle fill="#ffffff" r="3">
-          <animateMotion dur="2.5s" path="M250,250 L400,150" repeatCount="indefinite"></animateMotion>
+        <circle fill="#ffffff" r="4">
+          <animateMotion dur="2.5s" path="M300,300 L480,140" repeatCount="indefinite"></animateMotion>
         </circle>
-        <circle fill="#ffffff" r="3">
-          <animateMotion dur="4s" path="M250,250 L250,400" repeatCount="indefinite"></animateMotion>
+        <circle fill="#ffffff" r="4">
+          <animateMotion dur="4s" path="M300,300 L300,480" repeatCount="indefinite"></animateMotion>
         </circle>
       </svg>
 
       <!-- Central Node -->
-      <div class="absolute z-20 flex flex-col items-center">
-        <div class="w-32 h-32 rounded-full glass-card-light flex items-center justify-center border-2 border-accent-active pulse-node">
-          <span class="font-label-sm text-center px-2 leading-tight text-secondary">TRANSFORMACIÓN DIGITAL</span>
+      <div class="absolute z-20">
+        <div class="w-40 h-40 rounded-full glass-card flex items-center justify-center border-2 border-accent-active pulse-node-strong" style="box-shadow: 0 0 30px rgba(163, 198, 16, 0.5);">
+          <span class="font-label-sm text-center px-4 leading-tight text-secondary font-semibold">TRANSFORMACIÓN DIGITAL</span>
         </div>
       </div>
 
       <!-- Node 1: Procesos BIM -->
-      <div class="absolute top-[60px] left-[70px] glass-card-light p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/20">
-        <span class="material-symbols-outlined text-accent-active text-3xl">architecture</span>
-        <span class="font-label-sm text-secondary text-center text-xs">Procesos BIM</span>
+      <div class="absolute top-[40px] left-[40px] glass-card p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30" style="box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
+        <span class="material-symbols-outlined text-accent-active text-4xl">architecture</span>
+        <span class="font-label-sm text-secondary text-center text-sm">Procesos BIM</span>
       </div>
 
       <!-- Node 2: Automatización de Procesos -->
-      <div class="absolute top-[60px] right-[70px] glass-card-light p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/20">
-        <span class="material-symbols-outlined text-accent-active text-3xl">science</span>
-        <span class="font-label-sm text-secondary text-center text-xs">Automatización</span>
+      <div class="absolute top-[40px] right-[40px] glass-card p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30" style="box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
+        <span class="material-symbols-outlined text-accent-active text-4xl">science</span>
+        <span class="font-label-sm text-secondary text-center text-sm">Automatización</span>
       </div>
 
       <!-- Node 3: Elementos Integradores -->
-      <div class="absolute bottom-[60px] glass-card-light p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/20">
-        <span class="material-symbols-outlined text-accent-active text-3xl">dashboard</span>
-        <span class="font-label-sm text-secondary text-center text-xs">Elementos Integradores</span>
+      <div class="absolute bottom-[40px] left-1/2 transform -translate-x-1/2 glass-card p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30" style="box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
+        <span class="material-symbols-outlined text-accent-active text-4xl">dashboard</span>
+        <span class="font-label-sm text-secondary text-center text-sm">Elementos Integradores</span>
       </div>
     </div>
   </div>
+
+  <style>
+    .pulse-node-strong {
+      animation: pulseGlowStrong 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlowStrong {
+      0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(163, 198, 16, 0.6)) drop-shadow(0 0 25px rgba(163, 198, 16, 0.3));
+        box-shadow: 0 0 30px rgba(163, 198, 16, 0.5), 0 0 60px rgba(163, 198, 16, 0.2);
+      }
+      50% {
+        filter: drop-shadow(0 0 25px rgba(163, 198, 16, 1)) drop-shadow(0 0 50px rgba(163, 198, 16, 0.7));
+        box-shadow: 0 0 50px rgba(163, 198, 16, 0.8), 0 0 100px rgba(163, 198, 16, 0.4);
+      }
+    }
+
+    .data-flow-line {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawLine 3s forwards ease-in-out;
+    }
+
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid #E7E9C1;
+    }
+  </style>
 </section>
 
 <!-- SECCIÓN: TRANSFORMACIÓN DEL MODELADO DE INFORMACIÓN (BIM) -->
