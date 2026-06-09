@@ -262,9 +262,9 @@
     </div>
 
     <!-- CENTRAL NODE VISUALIZATION - 3 NODES -->
-    <div class="relative h-[600px] flex items-center justify-center mt-stack-lg" id="transformation-viz">
+    <div class="relative w-full max-w-2xl mx-auto" style="aspect-ratio: 1;" id="transformation-viz">
       <!-- SVG Connections -->
-      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 600 600">
+      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
         <!-- Connection Lines -->
         <path class="data-flow-line" d="M300,300 L120,140" fill="none" stroke="#A3C610" stroke-width="2"></path>
         <path class="data-flow-line" d="M300,300 L480,140" fill="none" stroke="#A3C610" stroke-width="2"></path>
@@ -283,28 +283,28 @@
       </svg>
 
       <!-- Central Node -->
-      <div class="absolute z-20">
-        <div class="w-40 h-40 rounded-full glass-card flex items-center justify-center border-2 border-accent-active pulse-node-strong" style="box-shadow: 0 0 30px rgba(163, 198, 16, 0.5);">
-          <span class="font-label-sm text-center px-4 leading-tight text-secondary font-semibold">GERENCIA DE CONSTRUCCIÓN</span>
+      <div class="absolute z-20 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full glass-card flex items-center justify-center border-2 border-accent-active pulse-node-strong" style="box-shadow: 0 0 30px rgba(163, 198, 16, 0.5);">
+          <span class="font-label-sm text-center px-4 leading-tight text-secondary font-semibold text-xs sm:text-sm">GERENCIA DE CONSTRUCCIÓN</span>
         </div>
       </div>
 
       <!-- Node 1: Procesos BIM -->
-      <div class="absolute glass-card p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30" style="top: 60px; left: 40px; box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
-        <span class="material-symbols-outlined text-accent-active text-4xl">architecture</span>
-        <span class="font-label-sm text-secondary text-center text-sm">Procesos BIM</span>
+      <div class="absolute glass-card p-4 sm:p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30" style="top: 10%; left: 5%; box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
+        <span class="material-symbols-outlined text-accent-active text-3xl sm:text-4xl">architecture</span>
+        <span class="font-label-sm text-secondary text-center text-xs sm:text-sm">Procesos BIM</span>
       </div>
 
       <!-- Node 2: Automatización de Procesos -->
-      <div class="absolute glass-card p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30" style="top: 60px; right: 40px; box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
-        <span class="material-symbols-outlined text-accent-active text-4xl">science</span>
-        <span class="font-label-sm text-secondary text-center text-sm">Automatización</span>
+      <div class="absolute glass-card p-4 sm:p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30" style="top: 10%; right: 5%; box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
+        <span class="material-symbols-outlined text-accent-active text-3xl sm:text-4xl">science</span>
+        <span class="font-label-sm text-secondary text-center text-xs sm:text-sm">Automatización</span>
       </div>
 
       <!-- Node 3: Elementos Integradores -->
-      <div class="absolute glass-card p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30" style="bottom: 50px; left: 50%; transform: translateX(-50%); box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
-        <span class="material-symbols-outlined text-accent-active text-4xl">dashboard</span>
-        <span class="font-label-sm text-secondary text-center text-sm">Elementos Integradores</span>
+      <div class="absolute glass-card p-4 sm:p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/30 left-1/2 -translate-x-1/2" style="bottom: 8%; box-shadow: 0 4px 20px rgba(163, 198, 16, 0.15);">
+        <span class="material-symbols-outlined text-accent-active text-3xl sm:text-4xl">dashboard</span>
+        <span class="font-label-sm text-secondary text-center text-xs sm:text-sm">Elementos Integradores</span>
       </div>
     </div>
   </div>
