@@ -189,6 +189,13 @@
                         0 0 60px rgba(163, 198, 16, 0.15),
                         0 0 90px rgba(163, 198, 16, 0.08);
         }
+        .reveal-content {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        .reveal-content.show {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="font-body-md" style="background: #ffffff; color: #141311;">
@@ -269,7 +276,7 @@
 <div class="w-12 h-1 bg-secondary mb-6"></div>
 <h2 class="font-headline-lg uppercase mb-4 text-secondary">Obtención de cantidades manual</h2>
 <p class="font-body-lg text-on-surface mb-8">Obtención de cantidades de forma manual a partir de planos físicos con alto consumo de tiempos y riesgo crítico de errores en la entrada de datos.</p>
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-4 reveal-content">
 <div class="p-4 bg-surface-container rounded border border-secondary/5 border-accent-active/20">
 <span class="font-label-sm block text-accent-active mb-1">RIESGO</span>
 <p class="text-sm text-on-surface">Errores de transcripción y omisiones</p>
@@ -292,7 +299,7 @@
 <div class="w-12 h-1 bg-accent-active mb-6"></div>
 <h2 class="font-headline-lg uppercase mb-4 text-secondary">Modelado BIM Paramétrico</h2>
 <p class="font-body-lg text-on-surface mb-6">Modelado con parámetros inteligentes en 3D. Implementación de un Tablero de cuantificación integrado para la obtención de cantidades.</p>
-<ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-3 reveal-content">
 <li class="flex items-start gap-2 text-sm text-on-surface">
 <span class="material-symbols-outlined text-accent-active text-lg" data-icon="check_circle">check_circle</span>
 Soporte exacto de cantidades para contratos
@@ -310,7 +317,7 @@ Optimización de procesos paralelos de control
 Confiabilidad técnica de procesos garantizada
 </li>
 </ul>
-<div class="mt-8">
+<div class="mt-8 reveal-content">
 <div class="inline-block px-4 py-2 bg-accent-active/10 border border-accent-active/30 rounded text-accent-active font-label-sm">
 TABLERO DE CUANTIFICACIÓN
 </div>
@@ -328,7 +335,7 @@ TABLERO DE CUANTIFICACIÓN
 <div class="w-12 h-1 bg-accent-active shimmer-effect mb-6"></div>
 <h2 class="font-headline-lg uppercase mb-4 text-secondary">Construir antes de construir</h2>
 <p class="font-body-lg text-on-surface mb-6">Modelo enfocado a un Entorno común de datos (ACC-VEXEL) con parametrización avanzada para procesos transversales de presupuesto, contratación, compras.</p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-content">
 <div class="space-y-4">
 <h4 class="font-label-sm text-accent-active border-b border-accent-active/20 pb-2 uppercase tracking-widest">IMPLEMENTACIÓN</h4>
 <ul class="space-y-3 text-sm">
@@ -722,6 +729,13 @@ TABLERO DE CUANTIFICACIÓN
             stage.classList.remove('active');
             if(i === index) {
                 stage.classList.add('active');
+                // Resetear reveal-content
+                const revealContents = stage.querySelectorAll('.reveal-content');
+                revealContents.forEach(el => el.classList.remove('show'));
+                // Mostrar después de 2 segundos
+                setTimeout(() => {
+                    revealContents.forEach(el => el.classList.add('show'));
+                }, 2000);
             }
         });
     }
