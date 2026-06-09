@@ -423,7 +423,7 @@ TABLERO DE CUANTIFICACIÓN
 <h2 class="font-headline-lg text-secondary">RPA Resistencia Concreto</h2>
 </div>
 <p class="font-body-lg text-on-surface mb-8">Automatización digital de los datos de muestras de resistencia de concreto en laboratorio para la toma oportuna de decisiones, en cumplimiento de las normativas legales, con visualización y notificación mediante correo electrónico. A futuro, se contempla la incorporación de trazabilidad por tipología de concreto y análisis del comportamiento de las concreteras.</p>
-<div class="space-y-4">
+<div class="space-y-4 reveal-content">
 <div class="p-4 bg-surface-container rounded border border-accent-active/20">
 <h3 class="font-label-sm text-accent-active uppercase tracking-wider mb-3">Aspectos Clave</h3>
 <ul class="space-y-2">
@@ -454,7 +454,7 @@ TABLERO DE CUANTIFICACIÓN
 </div>
 <p class="text-sm text-accent-active font-label-sm mb-6">Res. Adm. Juan Plazas</p>
 <p class="font-body-lg text-on-surface mb-8">Automatización digital de remisiones de concreto que agiliza la recepción, distribución y almacenamiento, eliminando documentos físicos y mejorando la trazabilidad en tiempo real.</p>
-<div class="space-y-4">
+<div class="space-y-4 reveal-content">
 <div class="p-4 bg-surface-container rounded border border-accent-active/20">
 <h3 class="font-label-sm text-accent-active uppercase tracking-wider mb-3">Aspectos Clave</h3>
 <ul class="space-y-2">
@@ -488,7 +488,7 @@ TABLERO DE CUANTIFICACIÓN
 <h2 class="font-headline-lg text-secondary">SINCO Automatización Cortes</h2>
 </div>
 <p class="font-body-lg text-on-surface mb-8">Automatización digital del proceso de actas de cortes en el sistema SINCO. Flujo de aprobación integrado con residente administrativo, director de proyecto y validación y residente técnico.</p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal-content">
 <div class="p-4 bg-surface-container rounded border border-accent-active/20">
 <div class="flex items-start gap-2 text-sm text-on-surface mb-2">
 <span class="material-symbols-outlined text-accent-active scale-75" data-icon="check_circle">check_circle</span>
@@ -764,6 +764,13 @@ TABLERO DE CUANTIFICACIÓN
         contents.forEach((content, i) => {
             if(i === index) {
                 content.classList.add('active');
+                // Resetear reveal-content
+                const revealContents = content.querySelectorAll('.reveal-content');
+                revealContents.forEach(el => el.classList.remove('show'));
+                // Mostrar después de 1 segundo
+                setTimeout(() => {
+                    revealContents.forEach(el => el.classList.add('show'));
+                }, 1000);
             } else {
                 content.classList.remove('active');
             }
