@@ -191,7 +191,7 @@
         }
         .reveal-content {
             opacity: 0;
-            transition: opacity 0.6s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
         }
         .reveal-content.show {
             opacity: 1;
@@ -732,10 +732,10 @@ TABLERO DE CUANTIFICACIÓN
                 // Resetear reveal-content
                 const revealContents = stage.querySelectorAll('.reveal-content');
                 revealContents.forEach(el => el.classList.remove('show'));
-                // Mostrar después de 2 segundos
+                // Mostrar después de 1 segundo
                 setTimeout(() => {
                     revealContents.forEach(el => el.classList.add('show'));
-                }, 2000);
+                }, 1000);
             }
         });
     }
