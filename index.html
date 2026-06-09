@@ -205,13 +205,31 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+        section {
+            transition: opacity 0.5s ease-in-out;
+        }
+        section.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        section.fade-in {
+            animation: fadeInSection 0.5s ease-in-out forwards;
+        }
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body class="font-body-md" style="background: #ffffff; color: #141311;">
 <div class="custom-cursor" id="cursor" style="transform: scale(1); background-color: transparent; border-color: rgb(75, 79, 29); left: 31px; top: 516px;"></div>
 
 <!-- BARRA DE NAVEGACIÓN LATERAL IZQUIERDA -->
-<div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-40 flex flex-col items-center justify-center gap-4 px-4 py-8 hidden md:flex">
+<div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col items-center justify-center gap-4 px-4 py-8 hidden md:flex">
   <button class="nav-section-btn w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 active-nav-btn group" onclick="scrollToSection('seccion-evolucion-bim', 0)" data-section="0">
     <span class="material-symbols-outlined text-secondary group-hover:text-accent-active text-lg" data-icon="architecture">architecture</span>
     <div class="absolute left-full ml-3 px-2 py-1 bg-secondary text-white rounded text-xs font-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">BIM</div>
@@ -846,11 +864,28 @@ TABLERO DE CUANTIFICACIÓN
 
     // Función para navegar a una sección
     function scrollToSection(sectionId, index) {
-        const section = document.getElementById(sectionId);
-        if(section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            updateActiveNavButton(index);
+        const targetSection = document.getElementById(sectionId);
+        if(!targetSection) return;
+
+        // Obtener la sección actual
+        const sections = document.querySelectorAll('main > section');
+        const currentSection = document.querySelector('main > section.fade-in') || sections[0];
+
+        if(currentSection === targetSection) return; // Si es la misma sección, no hacer nada
+
+        // Agregar fade-out a la sección actual
+        if(currentSection) {
+            currentSection.classList.remove('fade-in');
+            currentSection.classList.add('fade-out');
         }
+
+        // Después del fade-out, hacer scroll y fade-in a la nueva sección
+        setTimeout(() => {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            targetSection.classList.remove('fade-out');
+            targetSection.classList.add('fade-in');
+            updateActiveNavButton(index);
+        }, 300);
     }
 
     // Actualizar botón activo según scroll
