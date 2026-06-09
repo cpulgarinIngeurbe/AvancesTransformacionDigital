@@ -196,6 +196,18 @@
         .reveal-content.show {
             opacity: 1;
         }
+        .section3-group {
+            display: none;
+        }
+        .section3-group.visible {
+            display: grid;
+            grid-column: span 1;
+        }
+        @media (min-width: 768px) {
+            .section3-group.visible {
+                grid-column: span 1;
+            }
+        }
     </style>
 </head>
 <body class="font-body-md" style="background: #ffffff; color: #141311;">
@@ -777,10 +789,58 @@ TABLERO DE CUANTIFICACIÓN
         });
     }
 
+    // Inicializar carga progresiva de elementos Sección 3
+    function initSection3ProgressiveLoad() {
+        const gridContainer = document.querySelector('#seccion-elemento-integrador .grid');
+        if (!gridContainer) return;
+
+        const cards = Array.from(gridContainer.querySelectorAll('.glass-card-light'));
+
+        // Ocultar todos los elementos excepto los primeros 2
+        cards.forEach((card, index) => {
+            if (index < 2) {
+                card.style.display = 'grid';
+            } else {
+                card.style.display = 'none';
+                card.dataset.index = index;
+            }
+        });
+
+        // Crear botón "Cargar más"
+        const loadMoreBtn = document.createElement('button');
+        loadMoreBtn.className = 'mt-8 px-6 py-3 bg-secondary text-white rounded-lg font-label-sm uppercase tracking-wider hover:opacity-90 transition-opacity w-full';
+        loadMoreBtn.textContent = 'Cargar más elementos';
+        loadMoreBtn.id = 'load-more-section3';
+        loadMoreBtn.dataset.nextIndex = 2;
+        loadMoreBtn.dataset.itemsPerLoad = 2;
+
+        gridContainer.parentElement.appendChild(loadMoreBtn);
+
+        // Event listener para el botón
+        loadMoreBtn.addEventListener('click', () => {
+            const nextIndex = parseInt(loadMoreBtn.dataset.nextIndex);
+            const itemsPerLoad = parseInt(loadMoreBtn.dataset.itemsPerLoad);
+            let loadedCount = 0;
+
+            for (let i = nextIndex; i < cards.length && loadedCount < itemsPerLoad; i++) {
+                cards[i].style.display = 'grid';
+                loadedCount++;
+            }
+
+            loadMoreBtn.dataset.nextIndex = nextIndex + itemsPerLoad;
+
+            // Ocultar botón si se cargaron todos los elementos
+            if (nextIndex + itemsPerLoad >= cards.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+    }
+
     // Inicializar primera fase
     window.addEventListener('DOMContentLoaded', () => {
         showBimStage(0);
         updateActiveNavButton();
+        initSection3ProgressiveLoad();
     });
 
     // Función para navegar a una sección
