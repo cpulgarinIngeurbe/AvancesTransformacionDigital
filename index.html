@@ -805,13 +805,13 @@ TABLERO DE CUANTIFICACIÓN
     document.querySelectorAll('a, button').forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursor.style.transform = 'scale(1.5)';
-            cursor.style.backgroundColor = 'rgba(163, 198, 16, 0.15)';
+            cursor.style.backgroundColor = 'rgba(163, 198, 16, 0.4)';
             cursor.style.borderColor = '#A3C610';
         });
         el.addEventListener('mouseleave', () => {
             cursor.style.transform = 'scale(1)';
-            cursor.style.backgroundColor = 'transparent';
-            cursor.style.borderColor = '#4B4F1D';
+            cursor.style.backgroundColor = '#A3C610';
+            cursor.style.borderColor = '#A3C610';
         });
     });
 
