@@ -942,6 +942,14 @@ TABLERO DE CUANTIFICACIÓN
                 }
 
                 nextIndex += itemsPerLoad;
+
+                // Scroll automático a los nuevos elementos después de que aparezcan
+                setTimeout(() => {
+                    const lastLoadedCard = cards[Math.min(nextIndex - 1, cards.length - 1)];
+                    if(lastLoadedCard) {
+                        lastLoadedCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 600);
             }
         });
     }
@@ -951,6 +959,15 @@ TABLERO DE CUANTIFICACIÓN
         showBimStage(0);
         updateActiveNavButton();
         initSection3ProgressiveLoad();
+
+        // Inicializar reveal-content del primer tab de automatización
+        setTimeout(() => {
+            const firstAutoContent = document.querySelector('.auto-content.active');
+            if(firstAutoContent) {
+                const revealContents = firstAutoContent.querySelectorAll('.reveal-content');
+                revealContents.forEach(el => el.classList.add('show'));
+            }
+        }, 500);
     });
 
     // Función para navegar a una sección
