@@ -252,6 +252,64 @@
 </div>
 </nav>
 <main class="pt-20">
+<!-- PORTADA - ESTRATEGIA DE TRANSFORMACIÓN DIGITAL -->
+<section class="min-h-screen relative flex flex-col justify-center items-center py-stack-xl px-margin-desktop overflow-hidden" id="seccion-portada-transformacion">
+  <div class="w-full max-w-container-max">
+    <!-- Título y Subtítulo -->
+    <div class="mb-stack-xl text-center">
+      <h1 class="font-display-lg text-display-lg uppercase mb-4 text-secondary leading-none">Estrategia de transformación digital</h1>
+      <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Integración de procesos tecnológicos para la optimización y mejora de procesos</p>
+    </div>
+
+    <!-- CENTRAL NODE VISUALIZATION - 3 NODES -->
+    <div class="relative h-[500px] flex items-center justify-center mt-stack-lg" id="transformation-viz">
+      <!-- SVG Connections -->
+      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 500">
+        <!-- Connection Lines -->
+        <path class="data-flow-line" d="M250,250 L100,150" fill="none" stroke="#A3C610" stroke-width="1"></path>
+        <path class="data-flow-line" d="M250,250 L400,150" fill="none" stroke="#A3C610" stroke-width="1"></path>
+        <path class="data-flow-line" d="M250,250 L250,400" fill="none" stroke="#A3C610" stroke-width="1"></path>
+
+        <!-- Moving Light Paths -->
+        <circle fill="#ffffff" r="3">
+          <animateMotion dur="3s" path="M250,250 L100,150" repeatCount="indefinite"></animateMotion>
+        </circle>
+        <circle fill="#ffffff" r="3">
+          <animateMotion dur="2.5s" path="M250,250 L400,150" repeatCount="indefinite"></animateMotion>
+        </circle>
+        <circle fill="#ffffff" r="3">
+          <animateMotion dur="4s" path="M250,250 L250,400" repeatCount="indefinite"></animateMotion>
+        </circle>
+      </svg>
+
+      <!-- Central Node -->
+      <div class="absolute z-20 flex flex-col items-center">
+        <div class="w-32 h-32 rounded-full glass-card-light flex items-center justify-center border-2 border-accent-active pulse-node">
+          <span class="font-label-sm text-center px-2 leading-tight text-secondary">TRANSFORMACIÓN DIGITAL</span>
+        </div>
+      </div>
+
+      <!-- Node 1: Procesos BIM -->
+      <div class="absolute top-[60px] left-[70px] glass-card-light p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/20">
+        <span class="material-symbols-outlined text-accent-active text-3xl">architecture</span>
+        <span class="font-label-sm text-secondary text-center text-xs">Procesos BIM</span>
+      </div>
+
+      <!-- Node 2: Automatización de Procesos -->
+      <div class="absolute top-[60px] right-[70px] glass-card-light p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/20">
+        <span class="material-symbols-outlined text-accent-active text-3xl">science</span>
+        <span class="font-label-sm text-secondary text-center text-xs">Automatización</span>
+      </div>
+
+      <!-- Node 3: Elementos Integradores -->
+      <div class="absolute bottom-[60px] glass-card-light p-6 rounded-xl flex flex-col items-center gap-2 transform transition-transform hover:scale-110 border border-accent-active/20">
+        <span class="material-symbols-outlined text-accent-active text-3xl">dashboard</span>
+        <span class="font-label-sm text-secondary text-center text-xs">Elementos Integradores</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SECCIÓN: TRANSFORMACIÓN DEL MODELADO DE INFORMACIÓN (BIM) -->
 <section class="min-h-screen relative flex flex-col justify-center items-center py-stack-xl px-margin-desktop overflow-hidden" id="seccion-evolucion-bim">
 <div class="w-full max-w-container-max">
