@@ -196,17 +196,14 @@
         .reveal-content.show {
             opacity: 1;
         }
-        .section3-group {
-            display: none;
+        .section3-item {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .section3-group.visible {
-            display: grid;
-            grid-column: span 1;
-        }
-        @media (min-width: 768px) {
-            .section3-group.visible {
-                grid-column: span 1;
-            }
+        .section3-item.loaded {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
     </style>
 </head>
@@ -798,10 +795,18 @@ TABLERO DE CUANTIFICACIÓN
         const cards = Array.from(gridContainer.querySelectorAll('.glass-card-light'));
         let nextIndex = 2;
 
-        // Ocultar todos los elementos excepto los primeros 2
+        // Agregar clase section3-item a todos los elementos
+        cards.forEach((card) => {
+            card.classList.add('section3-item');
+        });
+
+        // Mostrar y animar los primeros 2 elementos
         cards.forEach((card, index) => {
             if (index < 2) {
                 card.style.display = 'grid';
+                // Trigger reflow para que la transición funcione
+                card.offsetHeight;
+                card.classList.add('loaded');
             } else {
                 card.style.display = 'none';
             }
@@ -818,6 +823,12 @@ TABLERO DE CUANTIFICACIÓN
 
                 for (let i = nextIndex; i < cards.length && loadedCount < itemsPerLoad; i++) {
                     cards[i].style.display = 'grid';
+                    // Trigger reflow para que la transición funcione
+                    cards[i].offsetHeight;
+                    // Agregar pequeño delay entre elementos para efecto escalonado
+                    setTimeout(() => {
+                        cards[i].classList.add('loaded');
+                    }, loadedCount * 100);
                     loadedCount++;
                 }
 
